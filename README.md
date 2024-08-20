@@ -1,3 +1,3 @@
-# 420-XXX-LI-EM
+# 420-FAR-LI-EM
 
-Gabarit de notes de cours
+Notes du cours POO 4 en DAS
