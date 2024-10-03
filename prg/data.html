@@ -189,11 +189,15 @@ Error message and password prompt
 
 <li>01 Journalisation applicative</li>
 
+<li>01 Journalisation applicative - Impression</li>
+
 <li>01.01 Introduction</li>
 
 <li>01.02 Fichiers de journalisation locaux</li>
 
-<li>01.03 Systèmes de journalisation</li>
+<li>01.03 Journalisation système</li>
+
+<li>01.04 Systèmes de journalisation</li>
 
 <li>01.Exercices</li>
 
@@ -8884,7 +8888,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="01.Exercices [[01.03 Systèmes de journalisation]] Semainier [[01 Journalisation applicative]] [[01.02 Fichiers de journalisation locaux]]" title="$:/StoryList">
+<div list="[[01.03 Journalisation système]] Semainier [[01 Journalisation applicative]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8941,7 +8945,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241002132211231" title="$:/temp/search">
+<div created="20210822182352824" modified="20241003140138003" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9059,7 +9063,7 @@ exports.hljs = hljs;
 <div bag="default" created="20181113130651975" modified="20181113130653357" revision="0" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20241001203838778" modified="20241002212835250" tags="[[Table des matières]]" title="00 Préparation">
+<div created="20241001203838778" modified="20241003135931984" tags="[[Table des matières]]" title="00 Préparation">
 <pre>&lt;div class=&quot;boite important&quot;&gt;
 
 !! L'exercice suivant servira de base aux prochains exercices et au TP1.
@@ -9113,10 +9117,26 @@ public interface IRsqaq
 
 # Assurez-vous que les affichages soient entièrement gérés par une classe à part (donc aucun ''Write/WriteLine'' dans le Main())..
 
-# Vous devez créer des tests unitaires pour toutes les propriétés et méthodes publiques.</pre>
+# Vous devez créer des tests unitaires pour toutes les propriétés et méthodes publiques.
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[SQLite Quick Start|https://www.sqlite.org/quickstart.html]]
+
+* [[Vue d’ensemble Microsoft.Data.Sqlite|https://learn.microsoft.com/fr-ca/dotnet/standard/data/sqlite/?tabs=netcore-cli]]
+
+* [[Bien démarrer avec EF Core|https://learn.microsoft.com/fr-ca/ef/core/get-started/overview/first-app?tabs=netcore-cli]]
+
+* [[How do I use C# and .NET with SQLite?|https://learn.microsoft.com/en-us/shows/on-dotnet/how-do-i-use-csharp-and-dotnet-with-sqlite]] (vidéo en anglais)
+
+* [[Procédure pas à pas : Créer et exécuter des tests unitaires|https://learn.microsoft.com/fr-ca/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2022]]
+&lt;/div&gt;</pre>
 </div>
-<div created="20240930132619166" modified="20240930143927010" tags="[[Table des matières]]" title="01 Journalisation applicative">
+<div created="20240930132619166" modified="20241003132715894" tags="[[Table des matières]]" title="01 Journalisation applicative">
 <pre>&lt;&lt;ssections&gt;&gt;</pre>
+</div>
+<div created="20241003132741607" modified="20241003135442715" title="01 Journalisation applicative - Impression">
+<pre>&lt;&lt;TouteSection section=&quot;01&quot;&gt;&gt;</pre>
 </div>
 <div created="20240930144839988" modified="20241001201103237" tags="[[01 Journalisation applicative]]" title="01.01 Introduction">
 <pre>* La [[journalisation]] consiste à enregistrer des événements rencontrés par un [[système d'information (SI)]] quelconque, et ce afin de conserver des traces aux fins de débogage ou d'enquête.
@@ -9134,17 +9154,40 @@ public interface IRsqaq
 ** (en cas d'erreur) module applicatif ayant généré l'erreur;
 ** etc.</pre>
 </div>
-<div created="20240930143603235" modified="20241003102056318" tags="[[01 Journalisation applicative]]" title="01.02 Fichiers de journalisation locaux">
+<div created="20240930143603235" modified="20241003130324737" tags="[[01 Journalisation applicative]]" title="01.02 Fichiers de journalisation locaux">
 <pre>Une première approche de journalisation consiste à simplement écrire des traces dans un fichier local, généralement situé dans le dossier de l'application elle-même ou dans un dossier approprié sur le système d'exploitation (p.ex., dans un sous-dossiers de `/var/log` sous Linux).
 
 Dans ce cas, il suffit d'ajouter ce qu'il faut à notre code pour envoyer les informations désirées au(x) fichier(s) de journalisation ciblé(s).
+
+!! Avantages
+* Ne nécessite aucune dépendance à des modules externes
+* On n'a pas nécessairement à se soucier de la nature du système où sera déployée l'application (p.ex. en sauvegardant les journaux dans le même dossier que l'application)
+* Facile de passer les journaux à des applications de traitement (p.ex., un système [[SIEM|https://fr.wikipedia.org/wiki/Security_information_and_event_management]])
+
+!! Inconvénients
+* Nécessitent de gérer soi-même la structure, le format et l'information contenues dans les journaux
+* Pas de centralisation automatique des journaux
+* Lecture et recherche visuelles des journaux peuvent être plus difficiles
 
 &lt;div class=&quot;boite docu&quot;&gt;
 
 * [[Guide pratique pour écrire du texte dans un fichier|https://learn.microsoft.com/fr-ca/dotnet/standard/io/how-to-write-text-to-a-file]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20241001174717295" modified="20241001230020523" tags="[[01 Journalisation applicative]]" title="01.03 Systèmes de journalisation">
+<div created="20241003130339406" modified="20241003141017681" tags="[[01 Journalisation applicative]]" title="01.03 Journalisation système">
+<pre>La journalisation système consiste à utiliser des mécanismes incoporés dans un système d'exploitation pour pousser des informations de journalisation.
+
+Par exemple, une application pourrait envoyer ses journaux au système de journalisation des événements de Windows, alors que la commande `logger` permet d'envoyer des journaux au système de journalisation Linux.
+
+!! Avantages
+* Centralisation automatique des journaux sur un système
+* Incorporation automatique de certaines informations, comme l'horodatage et le nom de l'application
+* Les OS ont souvent des outils incorporés permettant de visualiser et filtrer les journaux (comme l'observateur d'événements sous Windows et la commande `journalctl` sous Linux).
+
+!! Inconvénient
+* Dépend du système d'exploitation, donc généralement non portable</pre>
+</div>
+<div created="20241001174717295" modified="20241003130334082" tags="[[01 Journalisation applicative]]" title="01.04 Systèmes de journalisation">
 <pre>Outre la possibilité d'écrire soi-même des logs avec des méthodes de base, il existe plusieurs systèmes (//frameworks//) disponibles en C# pour faciliter la journalisation.
 
 Microsoft offre un système de base de journalisation pour .NET par le biais du paquetage NuGet appelé ''Microsoft.Extensions.Logging''.
@@ -9165,15 +9208,27 @@ Mais il existe d'autres systèmes de journalisation populaires pour .NET, notamm
 
 </pre>
 </div>
-<div created="20241002205739521" modified="20241003104614402" tags="[[01 Journalisation applicative]]" title="01.Exercices">
-<pre>En partant de votre [[préparation|00 Préparation]]:
+<div created="20241002205739521" modified="20241003124309340" tags="[[01 Journalisation applicative]]" title="01.Exercices">
+<pre>&lt;div class=&quot;boite important&quot;&gt;
+
+!! L'exercice suivant servira de base au TP1.
+&lt;/div&gt;
+
+En partant de votre [[préparation|00 Préparation]]:
 
 # Modifiez votre application console afin qu'on puisse lui passer en argument les éléments d'une requête; p.ex., si votre programme s'appelle ''DonneesRsqaq'', alors on devrait pouvoir exécuter quelque-chose comme:&lt;div&gt;
 
 `DonneesRsqaq.exe --cols id_station,nom_station,contaminant --where &quot;municipalite = 'Québec', date_fermeture = ''&quot;`
 &lt;/div&gt;
 
-# Ajoutez à votre application une classe ''Journalisation'' qui sera chargée d'afficher toutes les erreurs à l'écran en utilisant le paquetage ''Microsoft.Extensions.Logging''.</pre>
+# Ajoutez à votre application une classe ''Journalisation'' qui:
+## permettra d'afficher toutes les erreurs à l'écran en utilisant le paquetage ''Microsoft.Extensions.Logging'';
+## permettra d'enregistrer toutes les erreurs __avec des données de contexte pertinentes__ dans un fichier texte de journalisation dont le nom et le chemin seront définis dans un fichier de configuration accompagnant votre application. Les écritures devront se faire avec un moyen de base offert par C# pour écrire dans des fichiers (p.ex., ''StreamWriter'').
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[Utiliser Visual C# pour lire et écrire dans un fichier texte|https://learn.microsoft.com/fr-ca/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file]]
+&lt;/div&gt;</pre>
 </div>
 <div bag="default" created="20181113131237544" modified="20241001201525787" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
 <pre>.boite {
@@ -9370,7 +9425,7 @@ Mais il existe d'autres systèmes de journalisation populaires pour .NET, notamm
 <div created="20240930144952162" modified="20240930150446276" tags="Glossaire" title="journalisation">
 <pre>Consiste à enregistrer des opérations effectuées par un [[système d'information (SI)]] quelconque, et ce afin de conserver des traces aux fins de débogage ou d'enquête.</pre>
 </div>
-<div bag="default" created="20181113131129621" modified="20240930143918197" revision="0" tags="$:/tags/Macro" title="macros" type="text/vnd.tiddlywiki">
+<div bag="default" created="20181113131129621" modified="20241003140132889" revision="0" tags="$:/tags/Macro" title="macros" type="text/vnd.tiddlywiki">
 <pre>\define test()
    Allo
 \end
@@ -9408,14 +9463,33 @@ Mais il existe d'autres systèmes de journalisation populaires pour .NET, notamm
 &lt;/div&gt;
 \end
 
+
+\define TouteSection(section)
+
+&lt;$set name=&quot;reSection&quot; value=&quot;^$section$\.&quot;&gt;
+&lt;h1&gt;Section = $section$ &lt;/h1&gt;
+&lt;/$set&gt;
+
+&lt;h1&gt;Section = &lt;reSection&gt; &lt;/h1&gt;
+
+&lt;$list filter=&quot;[!is[system]regexp[&lt;reSection&gt;]sort[title]]&quot;&gt;
+    &lt;h2&gt;
+       &lt;$link&gt;&lt;$transclude field=&quot;title&quot; mode=&quot;block&quot;/&gt;&lt;/$link&gt;
+    &lt;/h2&gt;
+
+    &lt;$transclude field=&quot;text&quot; mode=&quot;block&quot;/&gt;
+
+    &lt;hr/&gt;
+&lt;/$list&gt;
+\end
+
 \define ssections()
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;$macrocall $name=&quot;toc-selective-expandable&quot; tag=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 
 &lt;/div&gt;
-\end
-</pre>
+\end</pre>
 </div>
 <div created="20241001175056573" modified="20241001175344603" tags="Glossaire" title="NuGet">
 <pre>Mécanisme de partage de code pris en charge par Microsoft sous forme de paquetages .NET.
@@ -9425,9 +9499,9 @@ Mais il existe d'autres systèmes de journalisation populaires pour .NET, notamm
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241001225832431" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241003104818446" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
-| 1 (30 sept.) | [[01 Journalisation applicative]] |&lt;ul&gt;&lt;li&gt;[[Préparation|00 Préparation]]&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 1 (30 sept.) | [[01 Journalisation applicative]] |&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
