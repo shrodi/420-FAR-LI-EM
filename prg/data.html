@@ -169,6 +169,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-01 Journalisation applicative-1329480811</li>
 
+<li>$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811</li>
+
 <li>$:/status/UserName</li>
 
 <li>$:/StoryList</li>
@@ -201,6 +203,10 @@ Error message and password prompt
 
 <li>01.Exercices</li>
 
+<li>02 Performance</li>
+
+<li>02.01 Introduction</li>
+
 <li>css</li>
 
 <li>Glossaire</li>
@@ -223,7 +229,7 @@ Error message and password prompt
 
 <li>TP1</li>
 
-<li>TPs - Truc et astuces</li>
+<li>TPs - Trucs et astuces</li>
 
 <li>verbosité</li>
 
@@ -8883,16 +8889,19 @@ exports.hljs = hljs;
 <div created="20231022184615988" modified="20240227203345676" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20231022184556895" modified="20240227203504922" title="$:/state/tab/sidebar--1835078512">
+<div created="20231022184556895" modified="20241007155730827" title="$:/state/tab/sidebar--1835078512">
 <pre>Table des matières</pre>
 </div>
 <div created="20241001150025207" modified="20241001150025207" title="$:/state/toc/Table des matières-01 Journalisation applicative-1329480811">
 <pre>open</pre>
 </div>
+<div created="20241007162130733" modified="20241007162130733" title="$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811">
+<pre>open</pre>
+</div>
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="[[01 Journalisation applicative]] [[01 Journalisation applicative - Impression]]" title="$:/StoryList">
+<div list="Semainier [[02 Performance]] [[02.01 Introduction]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8949,7 +8958,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241007150438894" title="$:/temp/search">
+<div created="20210822182352824" modified="20241007184303247" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9239,6 +9248,12 @@ En partant de votre [[préparation|00 Préparation]]:
 * [[Utiliser Visual C# pour lire et écrire dans un fichier texte|https://learn.microsoft.com/fr-ca/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file]]
 &lt;/div&gt;</pre>
 </div>
+<div created="20241007194639201" modified="20241007194644429" title="02 Performance">
+<pre>&lt;&lt;ssections&gt;&gt;</pre>
+</div>
+<div created="20241007194650474" modified="20241007194716899" tags="[[02 Performance]]" title="02.01 Introduction">
+<pre></pre>
+</div>
 <div bag="default" created="20181113131237544" modified="20241007150337737" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
 <pre>.boite {
     background: #dddddd;
@@ -9513,9 +9528,10 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241003104818446" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241007194631549" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
-| 1 (30 sept.) | [[01 Journalisation applicative]] |&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
+| 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|TP1]]&lt;/li&gt;&lt;li&gt;[[02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
@@ -9536,10 +9552,61 @@ img.normal {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20241007125434816" modified="20241007125445121" tags="[[TPs - Truc et astuces]]" title="TP1">
-<pre></pre>
+<div created="20241007125434816" list="" modified="20241007194046956" tags="[[TPs - Trucs et astuces]]" title="TP1">
+<pre>! Questions à se poser (et auxquelles chercher des réponses...)
+
+* Quelle est la nature des informations des fichiers de données? Où puis-je trouver cette information?
+
+* Quels liens je peux faire entre les données?
+
+* Comment importer les données dans une base de données SQLite?
+
+* Quels outils je peux utiliser pour interagir avec les données (en dehors de C#)?
+
+* Quelles requêtes SQL seront nécessaires pour extraire les données désirées?
+
+* Quel cadriciel (//framework//) utiliser en C# pour interagir avec les données?
+
+! Pistes de réflexion et conseils
+
+* Bien __lire__ les informations fournies sur les pages d'accueil des deux fichiers de données référés pour le TP: réaliser qu'il est probable que le fournisseur des fichiers a fourni les informations nécessaires pour en comprendre le contenu.
+
+* Bien __lire__ le nom des colonnes des deux fichiers et voir s'il y a des corrélations (même partielles) entre les deux.
+
+* Quand vous manipulez des fichiers de données de type CSV ou autres, les importer dans un tableur comme //MS-Excel// ou //Libreoffice Calc// est souvent une bonne façon de faire des recherches ou tris rapides afin d'évaluer des caractéristiques de base des données avant de les manipuler.
+
+* Une simple __recherche__ Google (en anglais, idéalement) devrait être suffisante pour trouver des liens permettant de __comprendre__ comment:
+*# créer une base de données SQLite;
+*# importer des données de fichiers CSV dans une telle base de données.
+*&gt; //Aussi, ne jamais hésiter à __consulter la documentation__ officielle d'un produit; en l'occurrence, le site de SQLite donne une foule d'informations pour démarrer avec SQLite.//
+
+* Prenez la peine d'__explorer__ les données importées dans votre base se données afin de vous assurer:
+*# des structures créées par l'importation;
+*# des types de colonnes;
+*# qu'il n'y a pas d'anomalies apparentes dans les données.
+
+* Prenez la peine de __concevoir__ vos requêtes en SQL //''avant''// de commencer à écrire quoi que ce soit en C# afin:
+*# de bien comprendre ce qui est demandé et comment le réaliser;
+*# de valider d'avance ce qui sera attendu comme résultat une fois programmé dans C#.
+
+* __Cherchez et évaluez__ les différentes possibilités offertes en C# pour interagir avec une base de données SQLite, puis __choisissez__-en une.
+** N'hésitez pas à aller vers une méthode que vous connaissez déjà s'il y a lieu, mais attention de __comprendre__ ce que vous faites dans le contexte (p.ex., si vous choisissez //Microsoft.EntityFrameworkCore//, est-il pertinent de faire une migration...?).
+** N'hésitez pas non plus à profiter de l'occasion d'un nouveau projet pour __chercher et explorer__ d'autres solutions que celles que vous connaissez: on ne sait jamais en informatique quand une technique qu'on aime tombera en désuétude pour être remplacée par une autre, ou encore on pourrait tomber sur une technique plus performante ou plus simple.
+*&gt; //Ne mélangez pas différentes techniques d'interaction avec SQLite à l'intérieur d'un même projet.//
+
+! Trucs et astuces
+
+* Quand vous cherchez comment faire quelque-chose sur Internet, ajouter le terme «tutorial» ou «howto» à votre recherche pourrait vous conduire à des résultats plus faciles à comprendre et à suivre.
+
+* Vous avez le droit d'utiliser des robots conversationnels pour trouver des réponses à vos questions: il faut juste être au fait que les réponses produites ne sont pas toujours exactes et donc ne pas nécessairement s'y fier à 100%. Mais, p.ex., demander à Copilot //«Comment importer des fichiers CSV dans SQLite?»// produit un résultat tout-à-fait correct (de mon côté, du moins! &amp;#128512;).
+
+* La méthode de base pour interagir avec SQLite est par le biais de la commande ''sqlite3'' (disponible sur le site sous le nom [[sqlite-tools-win-x64-3460100.zip|https://www.sqlite.org/download.html]]), mais vous pouvez __chercher__ s'il y a d'autres outils; ainsi, vous pourriez trouver, p. ex., [[SQLite Studio|https://sqlitestudio.pl/]], qui offre par ailleurs une version portable sous l'onglet «Download» du site.
+
+* Passer par [[ADO.NET|https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/?tabs=net-cli]] plutôt que //EF Core// est une solution qui peut s'avérer plus simple et plus directe.
+
+* Si vous utilisez //EF Core//, vous pouvez bâtir automatiquement le modèle DBContext avec [[Scaffold-DbContext|https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=vs]] (disponible dans le paquetage //Microsoft.EntityFrameworkCore.Tools//).</pre>
 </div>
-<div created="20241007125408807" modified="20241007125509693" tags="" title="TPs - Truc et astuces">
+<div created="20241007125408807" modified="20241007155745494" tags="[[Table des matières]]" title="TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
 <div created="20240930150719111" modified="20240930150813832" tags="Glossaire" title="verbosité">
