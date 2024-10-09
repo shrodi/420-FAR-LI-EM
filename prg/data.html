@@ -46,6 +46,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title>420-FAR-LI POO 4DAS-7455-B4 (A2024) — Cégep Limoilou – Enseignant: Eric Martel</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
+<!-- <link rel="stylesheet" href="https://shrodi.github.io/420-xxx-li-em/css/notes.css"> -->
 
 
 </head>
@@ -8912,7 +8913,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="02.Exercices Semainier" title="$:/StoryList">
+<div list="[[HTML header]] 02.Exercices Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8969,7 +8970,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241009000728150" title="$:/temp/search">
+<div created="20210822182352824" modified="20241009115907920" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9292,7 +9293,7 @@ Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance
 * [[Exercices 2.1 à 2.3|02.Exercices]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20241008221655886" modified="20241009104443625" tags="[[02 Performance]]" title="02.Exercices">
+<div created="20241008221655886" modified="20241009110604592" tags="[[02 Performance]]" title="02.Exercices">
 <pre># Réalisez l'expérience suivante:
 
 ## Dans Visual Studio, créez un simple projet console C# par défaut (programme qui affiche seulement &quot;Hello, World!&quot;).
@@ -9338,17 +9339,55 @@ int main()
 
 ## Générez à nouveau la solution; à nouveau, un simple fichier .exe sera produit dans le dossier «Release» de votre projet. Vérifiez qu'il fonctionne et __notez sa taille__.
 
+## Dans un environnement Linux (ça peut être dans WSL2 sous Windows), compilez le programme assembleur (ASM) suivant:&lt;div&gt;
+
+```x86asm
+; Hello world assembly program
+ ;                          
+ ; Author: Pablo Corbalán   
+ ; GitHub: https://github.com/pablocorbalann
+ ; Date: 06/12/2020         
+ ;
+ ; Compiling the program    
+ ; For compiling this hello world program you can use nasm and ld 
+ ;
+ ;   $ nasm -f elf32 -o hello.o hello.asm
+ ;   $ ld -m elf_i386 -o hello hello.o 
+ ;   $ ./hello
+
+section        .text                   ; declare the .text section
+global         _start                  ; has to be declared for the linker (ld)
+_start:                                ; entry point for _start
+    mov edx, len                       ; &quot;invoke&quot; the len of the message
+    mov ecx, msg                       ; &quot;invoke&quot; the message itself
+
+    mov ebx, 1                         ; set the file descriptor (fd) to stdout
+
+    mov eax, 4                         ; system call for &quot;write&quot;   
+    int 0x80                           ; call the kernel
+
+    mov eax, 1                         ; system call for &quot;exit&quot;
+    int 0x80                           ; call the kernel
+
+section        .data                   ; here you declare the data
+    msg        db &quot;Hello world!&quot;       ; the actual message to use
+    len        equ $ -msg              ; get the size of the message
+```
+&lt;/div&gt;
+
+## Vérifiez que l'exécutable «hello» produit fonctionne et __notez sa taille__.
+
 ## Questions:
 
-### Comment la taille des exécutables produits en C#,  C++ et C se compare-t-elle? Combien de fois l'un est-il plus grand que l'autre?
+### Comment la taille des différents exécutables produits ci-dessus se compare-t-elle selon le langage? Combien de fois le plus gros est-il plus grand que le plus petit?
 
 ### Selon vous, qu'est-ce qui peut expliquer ces différences?
 
 ### Selon vous, quelles sont les possibles conséquences concrètes de ces différences?
 
-### À la lumière de vos réponses ci-dessus, pensez-vous que C# est le meilleur langage à utiliser en toutes circonstances...? Essayez de penser à des exemples où le C/C++ serait plus avantageux que le C#.
+### À la lumière de vos réponses ci-dessus, pensez-vous que C# est le meilleur langage à utiliser en toutes circonstances...? Essayez de penser à des exemples où le C/C++ ou l'ASM seraient plus avantageux que le C#.
 
-### On a ici produit un programme extrêmement simple dans trois langages différents; pensez-vous que les différences de tailles observées seraient du même ordre de grandeur pour une application de plus grande envergure? Pourquoi?
+### On a ici produit un programme extrêmement simple dans des langages différents; pensez-vous que les différences de tailles observées seraient du même ordre de grandeur pour une application de plus grande envergure? Pourquoi?
 
 # Sans égard à la taille d'une application, selon vous, quelles sont les situations où la recherche de performance de traitement serait à privilégier?
 
@@ -9638,8 +9677,9 @@ img.normal {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185228316" modified="20241001150820215" tags="$:/tags/RawMarkup" title="HTML header" type="text/plain">
-<pre></pre>
+<div created="20231022185228316" modified="20241009113331720" tags="$:/tags/RawMarkup" title="HTML header" type="text/plain">
+<pre>&lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;https://shrodi.github.io/420-xxx-li-em/css/notes.css&quot;&gt; --&gt;
+</pre>
 </div>
 <div created="20240930144952162" modified="20240930150446276" tags="Glossaire" title="journalisation">
 <pre>Consiste à enregistrer des opérations effectuées par un [[système d'information (SI)]] quelconque, et ce afin de conserver des traces aux fins de débogage ou d'enquête.</pre>
