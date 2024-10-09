@@ -169,6 +169,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-01 Journalisation applicative-1329480811</li>
 
+<li>$:/state/toc/Table des matières-02 Performance-1329480811</li>
+
 <li>$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811</li>
 
 <li>$:/status/UserName</li>
@@ -186,6 +188,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth</li>
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
+
+<li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
 
 <li>00 Préparation</li>
 
@@ -205,7 +209,11 @@ Error message and password prompt
 
 <li>02 Performance</li>
 
+<li>02 Performance - Impression</li>
+
 <li>02.01 Introduction</li>
+
+<li>02.Exercices</li>
 
 <li>css</li>
 
@@ -8883,8 +8891,8 @@ exports.hljs = hljs;
 <div created="20231022184619780" modified="20231022184621872" title="$:/state/tab--868624678">
 <pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
 </div>
-<div created="20240912191149942" modified="20241007131150115" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20240912191149942" modified="20241008233619867" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20231022184615988" modified="20240227203345676" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
@@ -8895,13 +8903,16 @@ exports.hljs = hljs;
 <div created="20241001150025207" modified="20241001150025207" title="$:/state/toc/Table des matières-01 Journalisation applicative-1329480811">
 <pre>open</pre>
 </div>
+<div created="20241008221714632" modified="20241008221714632" title="$:/state/toc/Table des matières-02 Performance-1329480811">
+<pre>open</pre>
+</div>
 <div created="20241007162130733" modified="20241007162130733" title="$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811">
 <pre>open</pre>
 </div>
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="macros Semainier" title="$:/StoryList">
+<div list="Semainier [[02.01 Introduction]] 02.Exercices" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8958,7 +8969,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241008195127150" title="$:/temp/search">
+<div created="20210822182352824" modified="20241009000728150" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9075,6 +9086,9 @@ exports.hljs = hljs;
 </div>
 <div bag="default" created="20181113130651975" modified="20181113130653357" revision="0" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
+</div>
+<div created="20241008233626506" modified="20241008233626506" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
+<pre>yes</pre>
 </div>
 <div created="20241001203838778" modified="20241004123941881" tags="[[Table des matières]]" title="00 Préparation">
 <pre>&lt;div class=&quot;boite important&quot;&gt;
@@ -9248,13 +9262,57 @@ En partant de votre [[préparation|00 Préparation]]:
 * [[Utiliser Visual C# pour lire et écrire dans un fichier texte|https://learn.microsoft.com/fr-ca/troubleshoot/developer/visualstudio/csharp/language-compilers/read-write-text-file]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20241007194639201" modified="20241007194644429" title="02 Performance">
+<div created="20241007194639201" modified="20241008211634134" tags="[[Table des matières]]" title="02 Performance">
 <pre>&lt;&lt;ssections&gt;&gt;</pre>
 </div>
-<div created="20241007194650474" modified="20241007194716899" tags="[[02 Performance]]" title="02.01 Introduction">
-<pre></pre>
+<div created="20241008211556965" modified="20241008211609842" title="02 Performance - Impression">
+<pre>&lt;&lt;TouteSection 02&gt;&gt;</pre>
 </div>
-<div bag="default" created="20181113131237544" modified="20241007150337737" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
+<div created="20241007194650474" modified="20241009004016392" tags="[[02 Performance]]" title="02.01 Introduction">
+<pre>Jusqu'à présent dans votre programme, il est possible que vos enseignants n'aient pas particulièrement mis d'emphase sur la recherche de performance de vos applications, et c'est tout-à-fait normal.
+
+Les ordinateurs d'aujourd'hui étant très performants tant en mémoire qu'en capacité de traitement, on a vu les langages de programmation évoluer en fonctionnalités tant et tant qu'il serait inimaginable d'exécuter même le plus simple des programmes écrit dans certains langages modernes sur un ordinateur des années 1980 ou début des années 1990.
+
+Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance d'une application:
+
+* le paradigme de programmation (POO vs structurée simple, p.ex.);
+* le paradigme de développement (MVC vs MVVM vs monolithique, p.ex.);
+* le paradigme de synchronicité (synchrone vs asynchrone vs multifil vs multiprocessus);
+* les accès au disque dur;
+* les accès réseau;
+* les requêtes à une BD;
+* etc.
+
+&lt;div class=&quot;boite todo&quot;&gt;
+
+!! [[Exercices 2.1 à 2.3|02.Exercices]]
+&lt;/div&gt;</pre>
+</div>
+<div created="20241008221655886" modified="20241009002201381" tags="[[02 Performance]]" title="02.Exercices">
+<pre># Réalisez l'expérience suivante:
+## Dans Visual Studio, créez un simple projet console C# par défaut (programme qui affiche seulement &quot;Hello, World!&quot;).
+## Suivez [[ces instructions|https://learn.microsoft.com/fr-ca/dotnet/core/deploying/single-file/overview?tabs=vs#publish-a-single-file-app]] pour déployer l'application en tant que fichier exécutable unique autonome (''Note:'' pour réduire le plus poissble la taille de l'exécutable, choisissez une architecture win-x86 plutôt que win-x64.)
+## Rendez-vous au dossier où la publication a été enregistrée, assurez-vous que vous avez bien un seul fichier .exe qui a été produit (+ un fichier .pdb, sans importance) et vérifiez qu'il fonctionne (exécutez-le à la console).
+## Prenez en note la taille de l'exécutable.
+## Sur un ordinateur personnel ou dans une VM Windows&lt;sup&gt;*&lt;/sup&gt;, installez Visual Studio si ce n'est déjà fait, et ajoutez la composante nécessaire pour produire des programmes en C++:
+##&gt; [img width=600 [img/VS-Cpp.png]]&lt;div&gt;
+&lt;sup&gt;*&lt;/sup&gt; //Vous pouvez essayer d'installer la composante sur un poste du labo, mais il est probable que vous n'ayez pas les droits nécessaires.//
+&lt;/div&gt;
+## Créez un projet console simple C++ par défaut (qui affiche seulement &quot;Hello, World!&quot;).
+## Dans la barre d'outils, choisissez «Release» et «x86»:
+##&gt; [img width=600 [img/VS-Cpp-release86.png]]
+## Générez la solution; un simple fichier .exe sera produit dans le dossier «x64/Release» de votre projet. Vérifiez qu'il fonctionne et notez sa taille.
+## Questions:
+### Comment la taille de l'exécutable produit en C++ se compare-t-elle à celle de l'exécutable produit en C#? Combien de fois l'un est-il plus grand que l'autre?
+### Selon vous, qu'est-ce qui peut expliquer cette différence?
+### Selon vous, quelles sont les possibles conséquences concrètes de cette différence?
+### À la lumière de vos réponses ci-dessus, pensez-vous que C# est le meilleur langage à utiliser en toutes circonstances...? Essayez de penser à un exemple où le C++ serait plus avantageux que le C#.
+
+# Sans égard à la taille d'une application, selon vous, quelles sont les situations où la recherche de performance de traitement serait à privilégier?
+
+# Qu'est-ce que ''SAP HANA''? Quelle est la particularité de ce produit? Quels sont ses avantages recherchés? Quels sont ses inconvénients?</pre>
+</div>
+<div bag="default" created="20181113131237544" modified="20241009000723652" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
 <pre>.boite {
     background: #dddddd;
     padding: 1em;
@@ -9362,6 +9420,92 @@ En partant de votre [[préparation|00 Préparation]]:
     width: 200px;
     height: 100px;
     content:&quot;&quot;;
+ }
+
+.work::before {
+   background-image: url('img/work.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    content:&quot;&quot;;
+}
+
+ .bref::before {
+    content: &quot;En bref&quot;;
+    font: bold italic 2em cursive;
+    text-decoration: underline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    left: -20px;
+    top: -20 px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: LightSteelBlue;
+    /*border: 2px solid darkred;*/
+    rotate: -15deg;
+ }
+
+.experience::before {
+    content: &quot;Expérience&quot;;
+    font: bold italic 2em cursive;
+    text-decoration: underline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    left: -20px;
+    top: -20 px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: LightSteelBlue;
+    /*border: 2px solid darkred;*/
+    rotate: -15deg;
+ }
+
+.exercice::before {
+    content: &quot;Exercice&quot;;
+    font: bold italic 2em cursive;
+    text-decoration: underline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    left: -20px;
+    top: -20 px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: LightSteelBlue;
+    /*border: 2px solid darkred;*/
+    rotate: -15deg;
+ }
+
+.todo::before {
+    content: &quot;À faire&quot;;
+    font: bold italic 2em cursive;
+    text-decoration: underline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    left: -20px;
+    top: -20 px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: LightSteelBlue;
+    /*border: 2px solid darkred;*/
+    rotate: -15deg;
  }
  
  .notice {
@@ -9528,10 +9672,10 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241007194631549" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241009004102457" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
-| 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|TP1]]&lt;/li&gt;&lt;li&gt;[[02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|TP1]]&lt;/li&gt;&lt;li&gt;[[02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
