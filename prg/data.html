@@ -8912,7 +8912,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="[[02.01 Introduction]] Semainier" title="$:/StoryList">
+<div list="02.Exercices Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9292,25 +9292,63 @@ Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance
 * [[Exercices 2.1 à 2.3|02.Exercices]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20241008221655886" modified="20241009002201381" tags="[[02 Performance]]" title="02.Exercices">
+<div created="20241008221655886" modified="20241009104443625" tags="[[02 Performance]]" title="02.Exercices">
 <pre># Réalisez l'expérience suivante:
+
 ## Dans Visual Studio, créez un simple projet console C# par défaut (programme qui affiche seulement &quot;Hello, World!&quot;).
-## Suivez [[ces instructions|https://learn.microsoft.com/fr-ca/dotnet/core/deploying/single-file/overview?tabs=vs#publish-a-single-file-app]] pour déployer l'application en tant que fichier exécutable unique autonome (''Note:'' pour réduire le plus poissble la taille de l'exécutable, choisissez une architecture win-x86 plutôt que win-x64.)
+
+## Suivez [[ces instructions|https://learn.microsoft.com/fr-ca/dotnet/core/deploying/single-file/overview?tabs=vs#publish-a-single-file-app]] pour déployer l'application en tant que fichier exécutable unique autonome (''Note:'' pour réduire le plus possible la taille de l'exécutable, choisissez une architecture __win-x86 plutôt que win-x64__.)
+
 ## Rendez-vous au dossier où la publication a été enregistrée, assurez-vous que vous avez bien un seul fichier .exe qui a été produit (+ un fichier .pdb, sans importance) et vérifiez qu'il fonctionne (exécutez-le à la console).
+
 ## Prenez en note la taille de l'exécutable.
 ## Sur un ordinateur personnel ou dans une VM Windows&lt;sup&gt;*&lt;/sup&gt;, installez Visual Studio si ce n'est déjà fait, et ajoutez la composante nécessaire pour produire des programmes en C++:
 ##&gt; [img width=600 [img/VS-Cpp.png]]&lt;div&gt;
 &lt;sup&gt;*&lt;/sup&gt; //Vous pouvez essayer d'installer la composante sur un poste du labo, mais il est probable que vous n'ayez pas les droits nécessaires.//
 &lt;/div&gt;
-## Créez un projet console simple C++ par défaut (qui affiche seulement &quot;Hello, World!&quot;).
+
+## Créez un projet console simple C++ par défaut (qui affiche seulement &quot;Hello, World!&quot;); le code C++ affiché devrait être le suivant:&lt;div&gt;
+
+```cpp
+#include &lt;iostream&gt;
+
+int main()
+{
+    std::cout &lt;&lt; &quot;Hello World!\n&quot;;
+}
+```
+&lt;/div&gt;
+
 ## Dans la barre d'outils, choisissez «Release» et «x86»:
 ##&gt; [img width=600 [img/VS-Cpp-release86.png]]
-## Générez la solution; un simple fichier .exe sera produit dans le dossier «x64/Release» de votre projet. Vérifiez qu'il fonctionne et notez sa taille.
+
+## Générez la solution; un simple fichier .exe sera produit dans le dossier «Release» de votre projet. Vérifiez qu'il fonctionne et __notez sa taille__.
+
+## Dans votre projet C++, remplacez maintenant tout le code par le code C suivant:&lt;div&gt;
+
+```cpp
+#include &lt;stdio.h&gt;
+
+int main()
+{
+	printf(&quot;Hello World!&quot;);
+}
+```
+&lt;/div&gt;
+
+## Générez à nouveau la solution; à nouveau, un simple fichier .exe sera produit dans le dossier «Release» de votre projet. Vérifiez qu'il fonctionne et __notez sa taille__.
+
 ## Questions:
-### Comment la taille de l'exécutable produit en C++ se compare-t-elle à celle de l'exécutable produit en C#? Combien de fois l'un est-il plus grand que l'autre?
-### Selon vous, qu'est-ce qui peut expliquer cette différence?
-### Selon vous, quelles sont les possibles conséquences concrètes de cette différence?
-### À la lumière de vos réponses ci-dessus, pensez-vous que C# est le meilleur langage à utiliser en toutes circonstances...? Essayez de penser à un exemple où le C++ serait plus avantageux que le C#.
+
+### Comment la taille des exécutables produits en C#,  C++ et C se compare-t-elle? Combien de fois l'un est-il plus grand que l'autre?
+
+### Selon vous, qu'est-ce qui peut expliquer ces différences?
+
+### Selon vous, quelles sont les possibles conséquences concrètes de ces différences?
+
+### À la lumière de vos réponses ci-dessus, pensez-vous que C# est le meilleur langage à utiliser en toutes circonstances...? Essayez de penser à des exemples où le C/C++ serait plus avantageux que le C#.
+
+### On a ici produit un programme extrêmement simple dans trois langages différents; pensez-vous que les différences de tailles observées seraient du même ordre de grandeur pour une application de plus grande envergure? Pourquoi?
 
 # Sans égard à la taille d'une application, selon vous, quelles sont les situations où la recherche de performance de traitement serait à privilégier?
 
