@@ -158,6 +158,8 @@ Error message and password prompt
 
 <li>$:/state/showeditpreview</li>
 
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--868624678</li>
@@ -8886,13 +8888,16 @@ exports.hljs = hljs;
 <div created="20231022185455840" modified="20231022185455840" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20240912191204167" modified="20240912191209087" title="$:/state/tab--1963855381">
+<div created="20241010154930653" modified="20241010161210308" title="$:/state/sidebar">
+<pre>yes</pre>
+</div>
+<div created="20240912191204167" modified="20241010161223360" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
 <div created="20231022184619780" modified="20231022184621872" title="$:/state/tab--868624678">
 <pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
 </div>
-<div created="20240912191149942" modified="20241008233619867" title="$:/state/tab-1749438307">
+<div created="20240912191149942" modified="20241010161222292" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20231022184615988" modified="20240227203345676" title="$:/state/tab/moresidebar-401116514">
@@ -8901,8 +8906,8 @@ exports.hljs = hljs;
 <div created="20231022184556895" modified="20241007155730827" title="$:/state/tab/sidebar--1835078512">
 <pre>Table des matières</pre>
 </div>
-<div created="20241001150025207" modified="20241001150025207" title="$:/state/toc/Table des matières-01 Journalisation applicative-1329480811">
-<pre>open</pre>
+<div created="20241001150025207" modified="20241009143621973" title="$:/state/toc/Table des matières-01 Journalisation applicative-1329480811">
+<pre>close</pre>
 </div>
 <div created="20241008221714632" modified="20241008221714632" title="$:/state/toc/Table des matières-02 Performance-1329480811">
 <pre>open</pre>
@@ -8913,7 +8918,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="[[HTML header]] 02.Exercices Semainier" title="$:/StoryList">
+<div list="$:/ControlPanel TP1 Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8961,11 +8966,11 @@ exports.hljs = hljs;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1707&quot;
+            &quot;text&quot;: &quot;1440&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1067&quot;
+            &quot;text&quot;: &quot;960&quot;
         }
     }
 }</pre>
@@ -9082,8 +9087,8 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20240912191212904" modified="20240912191213615" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
-<pre>500px</pre>
+<div created="20240912191212904" modified="20241010161228278" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<pre>350px</pre>
 </div>
 <div bag="default" created="20181113130651975" modified="20181113130653357" revision="0" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
@@ -9778,7 +9783,7 @@ img.normal {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20241007125434816" list="" modified="20241007194046956" tags="[[TPs - Trucs et astuces]]" title="TP1">
+<div created="20241007125434816" list="" modified="20241010161204071" tags="[[TPs - Trucs et astuces]]" title="TP1">
 <pre>! Questions à se poser (et auxquelles chercher des réponses...)
 
 * Quelle est la nature des informations des fichiers de données? Où puis-je trouver cette information?
@@ -9819,6 +9824,16 @@ img.normal {
 ** N'hésitez pas à aller vers une méthode que vous connaissez déjà s'il y a lieu, mais attention de __comprendre__ ce que vous faites dans le contexte (p.ex., si vous choisissez //Microsoft.EntityFrameworkCore//, est-il pertinent de faire une migration...?).
 ** N'hésitez pas non plus à profiter de l'occasion d'un nouveau projet pour __chercher et explorer__ d'autres solutions que celles que vous connaissez: on ne sait jamais en informatique quand une technique qu'on aime tombera en désuétude pour être remplacée par une autre, ou encore on pourrait tomber sur une technique plus performante ou plus simple.
 *&gt; //Ne mélangez pas différentes techniques d'interaction avec SQLite à l'intérieur d'un même projet.//
+
+&lt;div class=&quot;boite important&quot;&gt;
+
+!! ''SÉCURITÉ''
+Pour assurer la sécurité contre les injections SQL, la ''meilleure'' protection est de ''toujours'' passer par des requêtes dites «préparées» (avec paramètres) lorsqu'on utilise du langage SQL brut. De cette manière, les valeurs passées en paramètre à la requête SQL ne seront pas concaténées ou intégrées textuellement à la requête, évitant du même coup les risques de piratage de la requête.
+
+* ''Avec ADO.NET'', il y a plusieurs moyens de créer des paramètres et leur passer des valeurs; un des plus simples est avec `AddWithValue()` comme illustré [[ici|https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/?tabs=net-cli#usage]], ou sinon on peut passer par une [[préparation complète|https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.prepare?view=netframework-4.8.1]].
+
+* ''Avec EF Core'', si on entre du code SQL avec `FromSql()`, l'interpolation aura l'effet de créer des paramètres et donc de [[protéger automatiquement contre les injections SQL|https://learn.microsoft.com/en-us/ef/core/querying/sql-queries?tabs=sqlserver#passing-parameters]]. Sinon toutes les autres méthodes de manipulation des données avec LINQ sont sécuritaires puisqu'elles n'utilisent pas du SQL brut.
+&lt;/div&gt;
 
 ! Trucs et astuces
 
