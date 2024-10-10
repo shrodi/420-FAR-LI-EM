@@ -8888,8 +8888,8 @@ exports.hljs = hljs;
 <div created="20231022185455840" modified="20231022185455840" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20241010154930653" modified="20241010161210308" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20241010154930653" modified="20241010164539141" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20240912191204167" modified="20241010161223360" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -8918,7 +8918,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="$:/ControlPanel TP1 Semainier" title="$:/StoryList">
+<div list="TP1 Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9783,7 +9783,7 @@ img.normal {
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20241007125434816" list="" modified="20241010161204071" tags="[[TPs - Trucs et astuces]]" title="TP1">
+<div created="20241007125434816" list="" modified="20241010164854303" tags="[[TPs - Trucs et astuces]]" title="TP1">
 <pre>! Questions à se poser (et auxquelles chercher des réponses...)
 
 * Quelle est la nature des informations des fichiers de données? Où puis-je trouver cette information?
@@ -9832,7 +9832,7 @@ Pour assurer la sécurité contre les injections SQL, la ''meilleure'' protectio
 
 * ''Avec ADO.NET'', il y a plusieurs moyens de créer des paramètres et leur passer des valeurs; un des plus simples est avec `AddWithValue()` comme illustré [[ici|https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/?tabs=net-cli#usage]], ou sinon on peut passer par une [[préparation complète|https://learn.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand.prepare?view=netframework-4.8.1]].
 
-* ''Avec EF Core'', si on entre du code SQL avec `FromSql()`, l'interpolation aura l'effet de créer des paramètres et donc de [[protéger automatiquement contre les injections SQL|https://learn.microsoft.com/en-us/ef/core/querying/sql-queries?tabs=sqlserver#passing-parameters]]. Sinon toutes les autres méthodes de manipulation des données avec LINQ sont sécuritaires puisqu'elles n'utilisent pas du SQL brut.
+* ''Avec EF Core'', si on entre du code SQL avec `FromSql()`, passer des valeurs par interpolation de chaîne aura l'effet de créer des paramètres et donc de [[protéger automatiquement contre les injections SQL|https://learn.microsoft.com/en-us/ef/core/querying/sql-queries?tabs=sqlserver#passing-parameters]]. Sinon toutes les autres méthodes de manipulation des données avec LINQ sont sécuritaires puisqu'elles n'utilisent pas du SQL brut.
 &lt;/div&gt;
 
 ! Trucs et astuces
