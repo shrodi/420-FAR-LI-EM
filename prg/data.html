@@ -230,6 +230,8 @@ Error message and password prompt
 
 <li>02.03 Les fuites de mémoire (mempory leaks)</li>
 
+<li>02.04 La mise en cache et mémoïsation</li>
+
 <li>02.Exercices</li>
 
 <li>03 La programmation concurrente</li>
@@ -241,8 +243,6 @@ Error message and password prompt
 <li>03.02 La programmation asynchrone</li>
 
 <li>03.Exercices</li>
-
-<li>2.04 La mise en cache et mémoïsation</li>
 
 <li>99 TPs - Trucs et astuces</li>
 
@@ -9464,6 +9464,31 @@ resultat = !(a == b);
 
 </pre>
 </div>
+<div created="20241015133729754" modified="20241015235116139" tags="[[02 Performance]]" title="02.04 La mise en cache et mémoïsation">
+<pre>* Parfois, il arrive qu'un même traitement doive être répété à plusieurs reprises.
+
+* Si ce traitement prend un temps non néligeable, il peut devenir plus avantageux d'en stocker le résultat et de le récupérer plus tard plutôt que de refaire le traitement.
+
+* Si le stockage est fait en mémoire (RAM), on parle alors de [[mémoïsation]]. Cette technique peut être exrêmement efficace, mais il faut faire attention dans l'estimation de l'espace mémoire qui sera requis afin de ne pas outrepasser les capacités physiques de la machine; notamment, si le système se met à virtualiser sa mémoire sur le disque dur (//swapping//), alors on pourrait complètement renverser l'effet et, au contraire, ralentir les traitements.
+
+!!! Exemple 2.3a -- Illustration d'un calcul avec mémoïsation
+```cs
+private Dictionary&lt;string, double&gt; _resultat;
+
+public double LongCalcul(double a, double b)
+{
+    string clef = $&quot;a,b&quot;;
+
+    // Effectue le calcul seulement si le resultat n'est pas déjà connu
+    if (!_resultat.ContainsKey(clef))
+    {
+        _resultat[clef] = /* Long calcul... */
+    }
+
+    return _resultat[clef];
+}
+```</pre>
+</div>
 <div created="20241008221655886" modified="20241015193620975" tags="[[02 Performance]]" title="02.Exercices">
 <pre># Réalisez l'expérience suivante:
 
@@ -9738,31 +9763,6 @@ async Task&lt;PainGrille&gt; GrillerPain()
 </div>
 <div created="20241015234624638" modified="20241015234723696" title="03.Exercices">
 <pre># Si ce n'est pas déjà fait, rendez votre TP1 complètement asynchrone.</pre>
-</div>
-<div created="20241015133729754" modified="20241015151748582" tags="[[02 Performance]]" title="2.04 La mise en cache et mémoïsation">
-<pre>* Parfois, il arrive qu'un même traitement doive être répété à plusieurs reprises.
-
-* Si ce traitement prend un temps non néligeable, il peut devenir plus avantageux d'en stocker le résultat et de le récupérer plus tard plutôt que de refaire le traitement.
-
-* Si le stockage est fait en mémoire (RAM), on parle alors de [[mémoïsation]]. Cette technique peut être exrêmement efficace, mais il faut faire attention dans l'estimation de l'espace mémoire qui sera requis afin de ne pas outrepasser les capacités physiques de la machine; notamment, si le système se met à virtualiser sa mémoire sur le disque dur (//swapping//), alors on pourrait complètement renverser l'effet et, au contraire, ralentir les traitements.
-
-!!! Exemple 2.3a -- Illustration d'un calcul avec mémoïsation
-```cs
-private Dictionary&lt;string, double&gt; _resultat;
-
-public double LongCalcul(double a, double b)
-{
-    string clef = $&quot;a,b&quot;;
-
-    // Effectue le calcul seulement si le resultat n'est pas déjà connu
-    if (!_resultat.ContainsKey(clef))
-    {
-        _resultat[clef] = /* Long calcul... */
-    }
-
-    return _resultat[clef];
-}
-```</pre>
 </div>
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
@@ -10202,11 +10202,11 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241015234848599" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241015235253749" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
-| 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
-| 3 (14 oct.) |&lt;ul&gt;&lt;li&gt;[[3.01 et 3.02|03 La programmation concurrente]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[Exercice 2.4|02.Exercices]]&lt;/li&gt;&lt;li&gt;[[03.Exercices]]&lt;/li&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[2.01|02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
+| 3 (14 oct.) |&lt;ul&gt;&lt;li&gt;[[2.02 à 2.04|02 Performance]]&lt;/li&gt;&lt;li&gt;[[3.01 et 3.02|03 La programmation concurrente]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[Exercice 2.4|02.Exercices]]&lt;/li&gt;&lt;li&gt;[[03.Exercices]]&lt;/li&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
