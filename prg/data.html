@@ -8960,7 +8960,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="[[02.02 Les accès BD]] [[99.01 Trucs TP1]] [[03.02 La programmation asynchrone]] Semainier" title="$:/StoryList">
+<div list="[[03.02 La programmation asynchrone]] Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9008,11 +9008,11 @@ exports.hljs = hljs;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1707&quot;
+            &quot;text&quot;: &quot;1440&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1067&quot;
+            &quot;text&quot;: &quot;960&quot;
         }
     }
 }</pre>
@@ -9673,12 +9673,16 @@ Par contre, si plusieurs personnes (plusieurs opérateurs) participent à l'éla
 
 En informatique, l'équivalent d'un «opérateur» est soit un ''fil'' (//thread//), soit un ''processus'' (//process//); voir https://learn.microsoft.com/fr-ca/windows/win32/procthread/processes-and-threads.</pre>
 </div>
-<div created="20241015182534027" modified="20241016104220416" tags="[[03 La programmation concurrente]]" title="03.02 La programmation asynchrone">
-<pre>La programmation asynchrone consiste à faire faire plusieurs tâches en même temps ''à un même fil de processus''.
+<div created="20241015182534027" modified="20241016152405290" tags="[[03 La programmation concurrente]]" title="03.02 La programmation asynchrone">
+<pre>La programmation asynchrone consiste, à la base, à faire faire plusieurs tâches en même temps ''à un même fil de processus''.
 
-Comme toutes les tâches seront réalisées par un seul fil, il s'ensuit ''qu'un seul coeur de processeur'' peut être utilisé (car un même fil ne peut être «réparti» sur plusieurs coeurs en même temps). Un programme asynchrone ne pourra donc pas profiter directement d'une architecture multicoeur.
+Comme toutes les tâches seront réalisées par un seul fil, il s'ensuit ''qu'un seul coeur de processeur'' peut être utilisé (car un même fil ne peut être «réparti» sur plusieurs coeurs en même temps). Un programme asynchrone ne pourra donc pas, en principe, profiter directement d'une architecture multicoeur.
 
-Par contre, la programmation asynchrone permettra d'éviter d'attendre la fin d'une opération (tâche) avant qu'une autre ne puisse commencer, ce qui permettra de ''rendre plus fluide le déroulement global d'une application'' en empêchant que des traitements bloquent inutilement l'application.
+Par contre:
+
+# la programmation asynchrone permettra d'éviter d'attendre la fin d'une opération (tâche) avant qu'une autre ne puisse commencer, ce qui permettra de ''rendre plus fluide le déroulement global d'une application'' en empêchant que des traitements bloquent inutilement l'application;
+
+# en C#, l'utilisation des tâches (''Task'') entraîne une gestion indépendante de .NET des fils par le //Thread Pool//, dont on n'a pas à se soucier; dans les faits, .NET attribuera des tâches à des fils selon les besoins, ce qui peut donc donner lieu à une forme de parallélisme automatique et donc, oui, en C# la programmatin asynchrone //peut// être parallèle, mais tout dépend des méthodes utilisées.
 
 &lt;div class=&quot;boite&quot;&gt;
 
