@@ -176,6 +176,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-03 La programmation concurrente-1329480811</li>
 
+<li>$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811</li>
+
 <li>$:/state/toc/Table des matières-Glossaire-1329480811</li>
 
 <li>$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811</li>
@@ -221,8 +223,6 @@ Error message and password prompt
 <li>02 Performance - Impression</li>
 
 <li>02.01 Introduction</li>
-
-<li>02.02 Complexité du code</li>
 
 <li>02.02 Les accès BD</li>
 
@@ -8945,6 +8945,9 @@ exports.hljs = hljs;
 <div created="20241015182540339" modified="20241015234749113" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
 <pre>open</pre>
 </div>
+<div created="20241015235514395" modified="20241015235514395" title="$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811">
+<pre>open</pre>
+</div>
 <div created="20241015134158134" modified="20241015134204869" title="$:/state/toc/Table des matières-Glossaire-1329480811">
 <pre>close</pre>
 </div>
@@ -8957,7 +8960,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="css [[99.01 Trucs TP1]] Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9014,7 +9017,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241015233848536" title="$:/temp/search">
+<div created="20210822182352824" modified="20241016004406758" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9313,7 +9316,7 @@ En partant de votre [[préparation|00 Préparation]]:
 <div created="20241008211556965" modified="20241008211609842" title="02 Performance - Impression">
 <pre>&lt;&lt;TouteSection 02&gt;&gt;</pre>
 </div>
-<div created="20241007194650474" modified="20241009011906179" tags="[[02 Performance]]" title="02.01 Introduction">
+<div created="20241007194650474" modified="20241016000401602" tags="[[02 Performance]]" title="02.01 Introduction">
 <pre>Jusqu'à présent dans votre programme, il est possible que vos enseignants n'aient pas particulièrement mis d'emphase sur la recherche de performance de vos applications, et c'est tout-à-fait normal.
 
 Les ordinateurs d'aujourd'hui étant très performants tant en mémoire qu'en capacité de traitement, on a vu les langages de programmation évoluer en fonctionnalités tant et tant qu'il serait inimaginable d'exécuter même le plus simple des programmes écrit dans certains langages modernes sur un ordinateur des années 1980 ou début des années 1990.
@@ -9335,10 +9338,9 @@ Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance
 * Lisez [[cette page|https://builtin.com/machine-learning/fastest-sorting-algorithm]]
 * Regardez [[cette vidéo|https://www.youtube.com/watch?v=rbbTd-gkajw]]
 * [[Exercices 2.1 à 2.3|02.Exercices]]
-&lt;/div&gt;</pre>
-</div>
-<div created="20241011155655860" modified="20241011172613093" title="02.02 Complexité du code">
-<pre>&lt;div class=&quot;boite citation&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;boite citation&quot;&gt;
 
 //Question posée par Roman Starkov le 2011-22-01 sur le site [[Stackexchange|https://softwareengineering.stackexchange.com/questions/38905/what-makes-a-large-and-complex-software-product-slow]]://
 
@@ -9349,24 +9351,7 @@ Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance
 &gt;//But the reason I've been blown away like this is because usually I use Visual Studio 2010, that doesn't feel snappy like this at all. Granted, Delphi 7 is a much smaller system than Visual Studio 2010, but it does have the appearance of having all the really necessary things there: a control palette, a form designer, a code editor with code completion. I realise that the language might be simpler, and the code completion might be a lot less powerful, and the IDE might not be nearly as extensible and feature-rich, but still: I do not understand how (i.e. through what mechanism) does having a lot of extra features (that I might not have even triggered yet) cause a system like Visual Studio to always feel sluggish in comparison.//
 &gt;
 &gt;//I would like to ask people experienced in working with systems the scale of Visual Studio: what is it that makes them slow? Is it the layers upon layers of abstractions required to keep the codebase within the human comprehension capabilities? Is it the sheer amount of code that needs to be run through? Is it the modern tendency towards programmer-time-saving approaches at the (mindbogglingly huge) expense in the clock cycles / memory usage department?//
-&lt;/div&gt;
-
-Généralement (mais pas toujours!), plus un code est complexe et plus cela nuira à la performance d'une application, car un code plus complexe se traduira par davantage d'opérations CPU, et donc en principe plus de temps.
-
-Un code plus complexe se traduira aussi par une plus grande taille utilisée en mémoire, ce qui peut nuire aux opérations générales du système et donc provoqi.
-
-La complexité du code peut référer au code écrit directement par une personne. P.ex.: 
-
-public Student Find(List&lt;Student&gt; list, int id)
-    {
-         Student r = null;
-         foreach (var i in list)
-         {
-            if (i.Id == id)
-                  r = i;
-         }
-         return r;
-    }</pre>
+&lt;/div&gt;</pre>
 </div>
 <div created="20241015123232733" modified="20241015133722408" tags="[[02 Performance]]" title="02.02 Les accès BD">
 <pre>Les accès aux bases de données peuvent être une source ''majeure'' de ralentissement pour une application.
@@ -9413,7 +9398,7 @@ Un autre facteur important à considérer est la quantité de données qui sera 
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20241015143039728" modified="20241015165436297" tags="[[02 Performance]]" title="02.03 L'algorithmique">
+<div created="20241015143039728" modified="20241016000436045" tags="[[02 Performance]]" title="02.03 L'algorithmique">
 <pre>Comme démontré dans la section //À faire// en [[introduction|02.01 Introduction]], l'algorithmique peut avoir un impact non négligeable sur les performances d'un programme.
 
 Ici, il n'y a pas vraiment de «truc» universel qu'on peut donner, à part très bien réfléchir aux choix que l'on fait afin de réduire le plus possible les opérations que le programme devra exécuter pour parvenir au fins désirées. Mais voici quelques pistes très générales à prendre en considération:
@@ -9767,7 +9752,7 @@ async Task&lt;PainGrille&gt; GrillerPain()
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
-<div created="20241007125434816" list="" modified="20241015165752443" tags="[[99 TPs - Trucs et astuces]]" title="99.01 Trucs TP1">
+<div created="20241007125434816" list="" modified="20241016004340901" tags="[[99 TPs - Trucs et astuces]]" title="99.01 Trucs TP1">
 <pre>! Questions à se poser (et auxquelles chercher des réponses...)
 
 * Quelle est la nature des informations des fichiers de données? Où puis-je trouver cette information?
@@ -9829,9 +9814,21 @@ Pour assurer la sécurité contre les injections SQL, la ''meilleure'' protectio
 
 * Passer par [[ADO.NET|https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/?tabs=net-cli]] plutôt que //EF Core// est une solution qui peut s'avérer plus simple et plus directe.
 
-* Si vous utilisez //EF Core//, vous pouvez bâtir automatiquement le modèle DBContext avec [[Scaffold-DbContext|https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=vs]] (disponible dans le paquetage //Microsoft.EntityFrameworkCore.Tools//).</pre>
+* Si vous utilisez //EF Core//, vous pouvez bâtir automatiquement le modèle DBContext avec [[Scaffold-DbContext|https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=vs]] (disponible dans le paquetage //Microsoft.EntityFrameworkCore.Tools//).
+
+&lt;div class=&quot;boite attention gros&quot;&gt;
+
+Si vous utilisez //EF Core//, évitez d'utiliser `FromSql(&quot;SELECT * ...&quot;)` si vous n'avez pas besoin de toutes les colonnes! //(Voir [[section 2.02|02.02 Les accès BD]])//
+
+* Vous pouvez utiliser [[.Select()|https://learn.microsoft.com/en-us/ef/core/performance/efficient-querying#project-only-properties-you-need]]
+
+* Vous pouvez utiliser [[des opérateurs de requête complexes|https://learn.microsoft.com/fr-ca/ef/core/querying/complex-query-operators]]
+
+* Vous pouvez aussi [[passer par des DTO|https://davecallan.com/how-to-select-specific-columns-in-entity-framework-core/]]
+
+&lt;/div&gt;</pre>
 </div>
-<div bag="default" created="20181113131237544" modified="20241015233846405" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
+<div bag="default" created="20181113131237544" modified="20241016002646583" revision="0" tags="$:/tags/Stylesheet" title="css" type="text/css">
 <pre>.boite {
     background: #dddddd;
     padding: 1em;
@@ -10040,6 +10037,7 @@ Pour assurer la sécurité contre les injections SQL, la ''meilleure'' protectio
 
 .gros {
     font-size: 1.5em;
+    line-height: 1.2;
 }
  
  /* Pour cacher dates */
