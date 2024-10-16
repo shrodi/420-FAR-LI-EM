@@ -8960,7 +8960,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="[[02.02 Les accès BD]] [[99.01 Trucs TP1]] [[03.02 La programmation asynchrone]] Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9353,7 +9353,7 @@ Outre le choix d'un langage, d'autres facteurs peuvent influencer la performance
 &gt;//I would like to ask people experienced in working with systems the scale of Visual Studio: what is it that makes them slow? Is it the layers upon layers of abstractions required to keep the codebase within the human comprehension capabilities? Is it the sheer amount of code that needs to be run through? Is it the modern tendency towards programmer-time-saving approaches at the (mindbogglingly huge) expense in the clock cycles / memory usage department?//
 &lt;/div&gt;</pre>
 </div>
-<div created="20241015123232733" modified="20241015133722408" tags="[[02 Performance]]" title="02.02 Les accès BD">
+<div created="20241015123232733" modified="20241016110503316" tags="[[02 Performance]]" title="02.02 Les accès BD">
 <pre>Les accès aux bases de données peuvent être une source ''majeure'' de ralentissement pour une application.
 
 Bien que le temps de connexion à la BD elle-même soit à considérer, les deux principales causes de ralentissement sont l'exécution des requêtes elles-mêmes et la trasmission des résultats.
@@ -9395,6 +9395,22 @@ Un autre facteur important à considérer est la quantité de données qui sera 
 
 * On sélectionne toujours le moins de données possibles
 &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;boite attention gros&quot;&gt;
+
+En C#, si vous utilisez //EF Core//, évitez d'utiliser [[FromSql()|https://learn.microsoft.com/fr-ca/ef/core/querying/sql-queries?tabs=sqlserver]] si vous n'avez pas besoin de toutes les colonnes!
+
+* Vous pouvez utiliser [[.Select()|https://learn.microsoft.com/en-us/ef/core/performance/efficient-querying#project-only-properties-you-need]]
+
+* Vous pouvez utiliser [[des opérateurs de requête complexes|https://learn.microsoft.com/fr-ca/ef/core/querying/complex-query-operators]]
+
+* Vous pouvez aussi [[passer par des DTO|https://davecallan.com/how-to-select-specific-columns-in-entity-framework-core/]]
+
+* Vous pouvez aussi penser à [[ADO.NET|https://learn.microsoft.com/fr-ca/dotnet/framework/data/adonet/]]: comme //EF Core// est bâti sur ce dernier, il est en principe plus performant, mais [[ATTENTION À LA SÉCURITÉ|https://www.stackhawk.com/blog/net-sql-injection-guide-examples-and-prevention/]]!
+
+* Vous pouvez aussi explorer d'autres solutions, comme le paquetage [[Dapper|https://www.nuget.org/packages/dapper]], à condition encore une fois de [[faire attention à la sécurité|https://www.learndapper.com/parameters]]!
 
 &lt;/div&gt;</pre>
 </div>
@@ -9657,7 +9673,7 @@ Par contre, si plusieurs personnes (plusieurs opérateurs) participent à l'éla
 
 En informatique, l'équivalent d'un «opérateur» est soit un ''fil'' (//thread//), soit un ''processus'' (//process//); voir https://learn.microsoft.com/fr-ca/windows/win32/procthread/processes-and-threads.</pre>
 </div>
-<div created="20241015182534027" modified="20241015234456546" tags="[[03 La programmation concurrente]]" title="03.02 La programmation asynchrone">
+<div created="20241015182534027" modified="20241016104220416" tags="[[03 La programmation concurrente]]" title="03.02 La programmation asynchrone">
 <pre>La programmation asynchrone consiste à faire faire plusieurs tâches en même temps ''à un même fil de processus''.
 
 Comme toutes les tâches seront réalisées par un seul fil, il s'ensuit ''qu'un seul coeur de processeur'' peut être utilisé (car un même fil ne peut être «réparti» sur plusieurs coeurs en même temps). Un programme asynchrone ne pourra donc pas profiter directement d'une architecture multicoeur.
@@ -9743,6 +9759,7 @@ async Task&lt;PainGrille&gt; GrillerPain()
 * Classe [[Task|https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-8.0]]
 * [[async|https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/async]]
 * [[await|https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await]]
+* [[Programmation asynchrone basée sur les tâches|https://learn.microsoft.com/fr-ca/dotnet/standard/parallel-programming/task-based-asynchronous-programming]]
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 </div>
@@ -9752,7 +9769,7 @@ async Task&lt;PainGrille&gt; GrillerPain()
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
-<div created="20241007125434816" list="" modified="20241016004340901" tags="[[99 TPs - Trucs et astuces]]" title="99.01 Trucs TP1">
+<div created="20241007125434816" list="" modified="20241016104611269" tags="[[99 TPs - Trucs et astuces]]" title="99.01 Trucs TP1">
 <pre>! Questions à se poser (et auxquelles chercher des réponses...)
 
 * Quelle est la nature des informations des fichiers de données? Où puis-je trouver cette information?
