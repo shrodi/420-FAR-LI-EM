@@ -8959,7 +8959,7 @@ exports.hljs = hljs;
 <div created="20241106191137604" modified="20241106191137604" title="$:/state/toc/Table des matières-03 La programmation concurrente--249536019">
 <pre>open</pre>
 </div>
-<div created="20241015182540339" modified="20241107123929232" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
+<div created="20241015182540339" modified="20241107162445966" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
 <pre>close</pre>
 </div>
 <div created="20241015235514395" modified="20241030191207632" title="$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811">
@@ -8980,7 +8980,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="[[03.04.01 Les bases en C#]] Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9028,11 +9028,11 @@ exports.hljs = hljs;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1707&quot;
+            &quot;text&quot;: &quot;1440&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1067&quot;
+            &quot;text&quot;: &quot;960&quot;
         }
     }
 }</pre>
@@ -9906,7 +9906,7 @@ Si on exécute ce dernier code, on constatera que, oui, on doit encore attendre 
 <div created="20241106191148218" modified="20241106203346989" tags="[[03 La programmation concurrente]]" title="03.04 La programmation parallèle">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
-<div created="20241106203349819" modified="20241106203654394" tags="[[03.04 La programmation parallèle]]" title="03.04.01 Les bases en C#">
+<div created="20241106203349819" modified="20241107162417978" tags="[[03.04 La programmation parallèle]]" title="03.04.01 Les bases en C#">
 <pre>Comme dit à la [[section 3.02|03.02 La programmation asynchrone]], la programmation aysnchrone typique consiste à faire réaliser plusieurs tâches en même temps par un seul et même fil de processus (//thread//). Dans notre [[exemple du plat à cuisiner|03.01 Introduction]], c'est le cas où un seul cuisinier (un seul opérateur) doit tout faire.
 
 S'il y a beaucoup de travail à asscomplir, peut-être qu'un seul opérateur ne sera pas suffisant: il sera alors opportun de partager le travail à faire entre plusieurs opérateurs. Toujours dans notre exemple du repas à préparer, le même cuisinier doit tout de même mettre les oeufs et le bacon dans la poêle, préparer le café, mettre le pain à griller et couper les pommes de terre: tout cela prend du temps séparément qui //s'additionne//. S'il y avait une personne pour s'occuper indépendamment de chaque tâche, alors le temps maximum que prendrait le processus serait celui de l'étape la plus longue.
@@ -9961,7 +9961,11 @@ ll est possible d'effectuer des requêtes en parallèle avec PLINQ, principaleme
 
 !! Finalement, notez que ''PLINQ'' [[n'accélérera pas nécessairement toutes les requêtes|https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/understanding-speedup-in-plinq]], et donc on doit demeurer vigilant quand à son utilisation.
 &lt;/div&gt;
-</pre>
+
+&lt;div class=&quot;boite stop&quot;&gt;
+
+!! Il se peut que vous tombiez sur la classe ''Thread'', qui est ''désuète'' (sans être obsolète, c.-à-d. qu'elle est encore supportée): c'était l'''ancienne façon de faire'' de la programmation concurrente sous C# et est donc ''déconseillée'' pour ne nouveaux projets.
+&lt;/div&gt;</pre>
 </div>
 <div created="20241106203715336" modified="20241107121744502" tags="[[03.04 La programmation parallèle]]" title="03.04.02 Les paradigmes">
 <pre>Il y a différents paradigmes de programmation parallèle, lesquels peuvent par ailleurs être catégorisés de différentes manières, par exemple selon que la mémoire est ditribuée ou partagée ou selon la manière dont les tâches sont organisées.
