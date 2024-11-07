@@ -174,6 +174,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-02 Performance-1329480811</li>
 
+<li>$:/state/toc/Table des matières-03 La programmation concurrente--249536019</li>
+
 <li>$:/state/toc/Table des matières-03 La programmation concurrente-1329480811</li>
 
 <li>$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811</li>
@@ -183,6 +185,8 @@ Error message and password prompt
 <li>$:/state/toc/Table des matières-TPs - Trucs et astuces-1329480811</li>
 
 <li>$:/state/toc/Table des matières/03 La programmation concurrente-03.01 Programmation concurrente - Concept général-1329480811</li>
+
+<li>$:/state/toc/Table des matières/03 La programmation concurrente-03.04 La programmation parallèle-1329480811</li>
 
 <li>$:/status/UserName</li>
 
@@ -243,6 +247,12 @@ Error message and password prompt
 <li>03.02 La programmation asynchrone</li>
 
 <li>03.03 Les flux asynchrones</li>
+
+<li>03.04 La programmation parallèle</li>
+
+<li>03.04.01 Les bases en C#</li>
+
+<li>03.04.02 Les paradigmes</li>
 
 <li>03.Exercices</li>
 
@@ -8946,7 +8956,10 @@ exports.hljs = hljs;
 <div created="20241008221714632" modified="20241024151910021" title="$:/state/toc/Table des matières-02 Performance-1329480811">
 <pre>close</pre>
 </div>
-<div created="20241015182540339" modified="20241030191204896" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
+<div created="20241106191137604" modified="20241106191137604" title="$:/state/toc/Table des matières-03 La programmation concurrente--249536019">
+<pre>open</pre>
+</div>
+<div created="20241015182540339" modified="20241107123929232" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
 <pre>close</pre>
 </div>
 <div created="20241015235514395" modified="20241030191207632" title="$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811">
@@ -8959,6 +8972,9 @@ exports.hljs = hljs;
 <pre>open</pre>
 </div>
 <div created="20241015183022527" modified="20241015183022527" title="$:/state/toc/Table des matières/03 La programmation concurrente-03.01 Programmation concurrente - Concept général-1329480811">
+<pre>open</pre>
+</div>
+<div created="20241106203423344" modified="20241107123502674" title="$:/state/toc/Table des matières/03 La programmation concurrente-03.04 La programmation parallèle-1329480811">
 <pre>open</pre>
 </div>
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
@@ -9021,7 +9037,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241024151907669" title="$:/temp/search">
+<div created="20210822182352824" modified="20241106192705211" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9622,7 +9638,7 @@ Effectuez toutes les modifications possibles afin d'optimiser au maximum la perf
 <div created="20241015193743763" modified="20241015193752619" title="03 La programmation concurrente - Impression">
 <pre>&lt;&lt;TouteSection 03&gt;&gt;</pre>
 </div>
-<div created="20241015170447707" modified="20241015190025578" tags="[[03 La programmation concurrente]]" title="03.01 Introduction">
+<div created="20241015170447707" modified="20241106201606460" tags="[[03 La programmation concurrente]]" title="03.01 Introduction">
 <pre>! Programmation séquentielle (classique)
 
 Le programmation classique est dite //séquentielle//: c.-à-d. que toutes les opérations s'effectuent en //séquence//, donc à la chaîne, l'une après l'autre.
@@ -9675,7 +9691,9 @@ Dans l'exemple précédent, on comprend que, évidemment, une seule personne (un
 
 Par contre, si plusieurs personnes (plusieurs opérateurs) participent à l'élaboration du déjeuner, alors chaque personne pourra démarrer une opération de manière indépendante; on parle alors de ''traitement parallèle'', et les temps de démarrage n'auront pas à être additionnés (ils feront partie du temps de chaque opération).
 
-En informatique, l'équivalent d'un «opérateur» est soit un ''fil'' (//thread//), soit un ''processus'' (//process//); voir https://learn.microsoft.com/fr-ca/windows/win32/procthread/processes-and-threads.</pre>
+En informatique, l'équivalent d'un «opérateur» est soit un ''fil'' (//thread//), soit un ''processus'' (//process//); voir https://learn.microsoft.com/fr-ca/windows/win32/procthread/processes-and-threads.
+
+En C#, les fontionnalités permettant la programmation concurrente sont pour la plupart fournies par la [[Task Parallel Library (TPL)|https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl]].</pre>
 </div>
 <div created="20241015182534027" modified="20241016152405290" tags="[[03 La programmation concurrente]]" title="03.02 La programmation asynchrone">
 <pre>La programmation asynchrone consiste, à la base, à faire faire plusieurs tâches en même temps ''à un même fil de processus''.
@@ -9885,8 +9903,95 @@ Si on exécute ce dernier code, on constatera que, oui, on doit encore attendre 
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20241015234624638" modified="20241024110628753" tags="[[03 La programmation concurrente]]" title="03.Exercices">
-<pre># Si ce n'est pas déjà fait, rendez votre TP1 complètement asynchrone.</pre>
+<div created="20241106191148218" modified="20241106203346989" tags="[[03 La programmation concurrente]]" title="03.04 La programmation parallèle">
+<pre>&lt;&lt;enfants&gt;&gt;</pre>
+</div>
+<div created="20241106203349819" modified="20241106203654394" tags="[[03.04 La programmation parallèle]]" title="03.04.01 Les bases en C#">
+<pre>Comme dit à la [[section 3.02|03.02 La programmation asynchrone]], la programmation aysnchrone typique consiste à faire réaliser plusieurs tâches en même temps par un seul et même fil de processus (//thread//). Dans notre [[exemple du plat à cuisiner|03.01 Introduction]], c'est le cas où un seul cuisinier (un seul opérateur) doit tout faire.
+
+S'il y a beaucoup de travail à asscomplir, peut-être qu'un seul opérateur ne sera pas suffisant: il sera alors opportun de partager le travail à faire entre plusieurs opérateurs. Toujours dans notre exemple du repas à préparer, le même cuisinier doit tout de même mettre les oeufs et le bacon dans la poêle, préparer le café, mettre le pain à griller et couper les pommes de terre: tout cela prend du temps séparément qui //s'additionne//. S'il y avait une personne pour s'occuper indépendamment de chaque tâche, alors le temps maximum que prendrait le processus serait celui de l'étape la plus longue.
+
+En général, ''async/await'' sera suffisant pour gérer adéquatement automatiquement les besoins de parallélisme grâce au //thread pool// .NET, mais il est possible de «forcer la main» en créant soi-même des conditions de traitement parallèle.
+
+! 1. ''System.Threading.Tasks.Parallel''
+
+Cette classe permet de démarrer facilement des tâches qui s'exécuteront complètement en parallèle.
+
+!! Parallel.For() / Parallel.ForEach()
+Utiles pour effectuer une même longue opération sur un ensemble de données: chaque itération de boucle sera lancée dans un fil indépendant et exploitera au mieux les capacités CPU de l'ordinateur hôte.
+
+!! Parallel.Invoke()
+
+Utile pour appeler différentes méthodes en parallèle.
+
+! 2. ''System.Threading.Tasks.TaskFactory''
+
+Cette classe pemet de créer et contrôler des tâches avec plus de précision.
+
+!! Task.Factory.StartNew()
+
+Permet de créer des tâches comme vu avec [[Task.Run()|03.02 La programmation asynchrone]], mais avec plus de contrôle sur leur comportement en permettant de passer plusieurs paramètres différents -- en fait, `Task.Run()` est un raccourci pour `Task.Factory.StartNew()`.
+
+Notamment, notons le paramètre `TaskCreationOptions.AttachedToParent`, qui permet d'attacher une tâche à sa tâche parent; une tâche parent ainsi liée attendra alors automatiquement que toutes ses tâches enfant se terminent, enlevant la nécessité d'un `Wait()` pour chaque enfant (il suffit d'attendre la tâche parent).
+
+! 3. ''Parallel LINQ (PLINQ)''
+
+ll est possible d'effectuer des requêtes en parallèle avec PLINQ, principalement par le biais de la classe ''System.Linq.ParallelEnumerable'' et de sa méthode `AsParallel()`.
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[System.Threading.Tasks.Parallel|https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel?view=net-8.0]]
+
+* [[System.Threading.Tasks.TaskFactory|https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskfactory?view=net-8.0]]
+
+* [[TaskCreationOptions Enum|https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcreationoptions?view=net-8.0]]
+
+* [[Introduction to PLINQ|https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/introduction-to-plinq]]
+
+* [[System.Linq.ParallelEnumerable|https://learn.microsoft.com/en-us/dotnet/api/system.linq.parallelenumerable?view=net-8.0]]
+
+* [[AsParallel()|https://learn.microsoft.com/en-us/dotnet/api/system.linq.parallelenumerable.asparallel?view=net-8.0]]
+&lt;/div&gt;
+
+&lt;div class=&quot;boite attention&quot;&gt;
+
+!! La programmation parallèle n'est pas une panacée contre la mauvaise programmation ni les traitements lents, d'autant plus qu'il ''coûte cher'' (en temps CPU) de créer des fils indépendants, de sorte qu'il faut bien se retenir d'utiliser cette technique sur des tâches qui, individuellement, ne sont pas très longues (bref, il faut que le temps de création de chaque fil soit substantiellement plus court que le temps d'exécution de chaque tâche).
+
+!! Ensuite, il faut faire attention au ''nombre de fils créés'': un trop grand nombre de fils encombrera inutilement le(s) CPU(s), risquant de provoquer un ralentissement plutôt qu'une accélération (imaginez une centaine de cuisiniers dans une toute petite cuisine...!).
+
+!! Finalement, notez que ''PLINQ'' [[n'accélérera pas nécessairement toutes les requêtes|https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/understanding-speedup-in-plinq]], et donc on doit demeurer vigilant quand à son utilisation.
+&lt;/div&gt;
+</pre>
+</div>
+<div created="20241106203715336" modified="20241107121744502" tags="[[03.04 La programmation parallèle]]" title="03.04.02 Les paradigmes">
+<pre>Il y a différents paradigmes de programmation parallèle, lesquels peuvent par ailleurs être catégorisés de différentes manières, par exemple selon que la mémoire est ditribuée ou partagée ou selon la manière dont les tâches sont organisées.
+
+! Organisation des tâches
+
+Reprenons l'exemple d'une cuisine de restaurant où plusieurs cuisiniers s'activent à faire des repas. Comment les tâches sont-elles organisées entre les cuisiniers? Est-ce que chaque cuisinier s'occupe de compléter une commande complète, ou est-ce qu'il y a un chef-cuisinier qui dit aux sous-chefs quoi faire et dans quel ordre?
+
+Dans le premier scénario, où chaque cuisinier fait une commande complète, on parle d'organisation par ''file''. Dans ce cas, on lance des tâches similaires en parallèle l'une après l'autre, et chaque tâche est indépendante des autres (comme chaque commande d'un restaurant est indépendante des autres).
+
+&gt; Par exemple, si on voulait trier plusieurs ensembles de valeurs, on pourrait lancer des tâches une après l'autre (une pour chaque ensemble à trier), et mettre les tâches en attente dans une ''file d'attente''.
+
+Dans le second scénario, où il y a un chef-cuisinier et des sous-chefs, on parle d'organisation avec ''contremaître(s) et ouvriers''. Dans ce cas, on aura au moins une tâche qui servira de contremaître (ou chef d'orchestre) et qui distribuera le travail à d'autres tâches (possiblement spécialisées). La tâche contremaître pourra aussi être chargée de recevoir les résultats des tâches ouvrières, ou une autre tâche pourra être dédiée à cette fin. Ce mode d'organisation est souvent implémenté sous forme de ''services'' ou ''microservices''.
+
+&gt; Par exemple, pour [[plusieurs projets scientifiques|https://scienceunited.org/su_science.php]],  on peut rendre notre ordinateur personnel disponible pour recevoir des tâches de calculs de la part d'un serveur central. On appelle cela du ''calcul distribué''. 
+
+! Mémoire partagée vs distribuée
+
+Si toutes les tâches sont exécutées sur le même ordinateur, il est alors possible de leur faire ''partager la même mémoire'': on aura alors une architecture multifil (//multithread//), où tous les fils sont issus d'un seul et même processus (programme exécutable). Un avantage de cette architecture est qu'il est alors très facile pour les tâches de communiquer entre elles (de se passer des valeurs) -- à l'image des propriétés statiques d'une classe, par exemple. De plus, on n'a pas besoin de dédoubler les informations partagées, et un seul processus a besoin d'être créé (la création d'un processus est plus coûteuse que la création d'un fil).
+
+Par contre, on peut aussi avoir plusieurs processus plutôt qu'un seul; dans ce cas, la mémoire ne peut être partagée et on parle plutôt de ''mémoire distribuée'', c.-à-d. que chaque processus doit avoir une copie des informations nécessaires à son fonctionnement, et ces informations peuvent se répéter d'un processus à l'autre. Un autre impact est qu'il faut alors mettre en place un système de ''communication'' entre les processus. Ce système pourra varier selon que les processus pourront ou non s'exécuter sur un même hôte (p.ex., fichier d'échange vs communication TCP), mais sera nécessairement plus lent qu'une communication entre fils. En raison de ces inconvénients et du coût de création de plusieurs processus, ce type d'architecture parallèle sera en principe réservé à une organisation de tâches implémentée en ''services/microservices''.</pre>
+</div>
+<div created="20241015234624638" modified="20241107123221999" tags="[[03 La programmation concurrente]]" title="03.Exercices">
+<pre># Si ce n'est pas déjà fait, rendez votre TP1 complètement asynchrone avec des ''async/await''.
+
+# Implémentez l'algorithme [[Quicksort|https://en.wikipedia.org/wiki/Quicksort]] en utilisant:
+
+## ''Parallel.For()''
+## ''Parallel.Invoke()''
+## ''Task.Factory.StartNew()'' et l'option ''TaskCreationOptions.AttachedToParent''.</pre>
 </div>
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
@@ -10342,13 +10447,14 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241030191246406" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241107124005734" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
 | 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[2.01|02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[Exercices 2.1 à 2.3|02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
 | 3 (14 oct.) |&lt;ul&gt;&lt;li&gt;[[2.02 à 2.04|02 Performance]]&lt;/li&gt;&lt;li&gt;[[3.01 et 3.02|03 La programmation concurrente]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[Exercice 2.4|02.Exercices]]&lt;/li&gt;&lt;li&gt;[[Execice 3.1|03.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
-| 4 (21 oct.) |&lt;ul&gt;&lt;li&gt;[[3.03|03 La programmation concurrente]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|
-| 5 (28 oct.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 4 (21 oct.) |&lt;ul&gt;&lt;li&gt;[[3.03|03.03 Les flux asynchrones]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|
+| 5 (28 oct.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;/ul&gt;|
+| 6 (4 nov.) |&lt;ul&gt;&lt;li&gt;[[3.04.01|03.04.01 Les bases en C#]] et [[3.04.02|03.04.02 Les paradigmes]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP2&lt;/li&gt;&lt;li&gt;[[Exercice 3.2|03.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
