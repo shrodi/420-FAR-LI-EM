@@ -178,6 +178,10 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-03 La programmation concurrente-1329480811</li>
 
+<li>$:/state/toc/Table des matières-04 Microservices avec conteneurisation-1329480811</li>
+
+<li>$:/state/toc/Table des matières-04 Microservices-1329480811</li>
+
 <li>$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811</li>
 
 <li>$:/state/toc/Table des matières-Glossaire-1329480811</li>
@@ -255,6 +259,16 @@ Error message and password prompt
 <li>03.04.02 Les paradigmes</li>
 
 <li>03.Exercices</li>
+
+<li>04 Microservices - Impression</li>
+
+<li>04 Microservices avec conteneurisation</li>
+
+<li>04.01 La conteneurisation</li>
+
+<li>04.02 Architecture en microservices</li>
+
+<li>04.Exercices</li>
 
 <li>99 TPs - Trucs et astuces</li>
 
@@ -8953,13 +8967,19 @@ exports.hljs = hljs;
 <div created="20241001150025207" modified="20241115114542082" title="$:/state/toc/Table des matières-01 Journalisation applicative-1329480811">
 <pre>close</pre>
 </div>
-<div created="20241008221714632" modified="20241122104719385" title="$:/state/toc/Table des matières-02 Performance-1329480811">
-<pre>open</pre>
+<div created="20241008221714632" modified="20241206130216215" title="$:/state/toc/Table des matières-02 Performance-1329480811">
+<pre>close</pre>
 </div>
 <div created="20241106191137604" modified="20241106191137604" title="$:/state/toc/Table des matières-03 La programmation concurrente--249536019">
 <pre>open</pre>
 </div>
-<div created="20241015182540339" modified="20241122104740748" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
+<div created="20241015182540339" modified="20241206130215127" title="$:/state/toc/Table des matières-03 La programmation concurrente-1329480811">
+<pre>close</pre>
+</div>
+<div created="20241206130214230" modified="20241206130214230" title="$:/state/toc/Table des matières-04 Microservices avec conteneurisation-1329480811">
+<pre>open</pre>
+</div>
+<div created="20241206115157805" modified="20241206115157805" title="$:/state/toc/Table des matières-04 Microservices-1329480811">
 <pre>open</pre>
 </div>
 <div created="20241015235514395" modified="20241030191207632" title="$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811">
@@ -8980,7 +9000,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="04.Exercices Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9037,7 +9057,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20241106192705211" title="$:/temp/search">
+<div created="20210822182352824" modified="20241206130210506" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -9997,6 +10017,49 @@ Par contre, on peut aussi avoir plusieurs processus plutôt qu'un seul; dans ce 
 ## ''Parallel.Invoke()''
 ## ''Task.Factory.StartNew()'' et l'option ''TaskCreationOptions.AttachedToParent''.</pre>
 </div>
+<div created="20241206115145081" modified="20241206115149688" title="04 Microservices - Impression">
+<pre>&lt;&lt;TouteSection 04&gt;&gt;</pre>
+</div>
+<div created="20241206113643450" modified="20241206122734275" tags="[[Table des matières]]" title="04 Microservices avec conteneurisation">
+<pre>&lt;&lt;ssections&gt;&gt;</pre>
+</div>
+<div created="20241206123944425" modified="20241206130156224" tags="[[04 Microservices avec conteneurisation]]" title="04.01 La conteneurisation">
+<pre>* La conteneurisation est une forme de virtualisation, sauf qu'au lieu de virtualiser une machine au complet (RAM réservée, CPU virtuel, etc.), on se contente de créer un espace d'exécution protégé ayant son propre environnement, de sorte que tous ''les conteneurs partagent tous ensemble les ressources d'un système physique'' au lieu de s'en réserver chacun une part comme le font les machines virtuelles (VM) classiques.
+
+* Le résultat est que ''les conteneurs sont beaucoup plus légers et efficients que des VM'' pour accomplir une foule de tâches similaires.
+
+* Leur efficience fait de la conteneurisation une solution idéale pour notamment isoler des services, ce qui résulte en des systèmes beaucoup plus faciles à maintenir puisque chaque service se trouve isolé dans son propre environnement système et donc, p.ex. avec ses propres dépendances et versions de dépendances.
+
+* Il existe plusieurs solutions de conteneurisation; mentionnons ici:
+** [[LXD|https://canonical.com/lxd]] (sous Ubuntu), qui permet de facilement créer des serveurs conteneurisés;
+** [[Docker|https://www.docker.com/]] (toutes les plateformes), qui est davantage orienté vers la conteneurisation d'applications et services.
+
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[First steps with LXD|https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/]]
+* [[Install Docker Desktop on Windows|https://docs.docker.com/desktop/setup/install/windows-install/#start-docker-desktop]]
+&lt;/div&gt;</pre>
+</div>
+<div created="20241206115007976" list="" modified="20241206123940116" tags="[[04 Microservices avec conteneurisation]]" title="04.02 Architecture en microservices">
+<pre>
+
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[Creating a simple data-driven CRUD microservice|https://learn.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/data-driven-crud-microservice]]
+* [[.NET Microservices: Architecture for Containerized .NET Applications|https://learn.microsoft.com/en-us/dotnet/architecture/microservices/]]
+* [[Microservices Using ASP.NET Core|https://www.c-sharpcorner.com/article/microservice-using-asp-net-core/]]
+
+
+&lt;/div&gt;</pre>
+</div>
+<div created="20241206122748381" modified="20241206130724313" tags="[[04 Microservices avec conteneurisation]]" title="04.Exercices">
+<pre># Dans une VM Linux Ubuntu, trouvez comment créer un conteneur LXD, puis installez-y //Apache 2// et accédez à la page d'accueil par défaut d'Apache depuis l'hôte, démontrant ainsi votre succès.
+
+#  Complétez le tutoriel présenté sur [[cette page|https://www.c-sharpcorner.com/article/microservice-using-asp-net-core/]].
+#&gt; //Notez que Docker est sensé déjà être installé sur les postes du labo, mais pour éviter tous problèmes vous êtes sans doute mieux d'utiliser une VM Windows.//</pre>
+</div>
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
@@ -10453,7 +10516,7 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241206113310451" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241206130859353" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
 | 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[2.01|02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[Exercices 2.1 à 2.3|02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
@@ -10464,7 +10527,7 @@ img.normal {
 | 7 (11 nov.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;~~TP3~~&lt;/li&gt;&lt;/ul&gt;|
 | 8 (18 nov.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;/ul&gt;|
 | 9 (25 nov.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;/ul&gt;|
-| 10 (2 déc.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 10 (2 déc.) |&lt;ul&gt;&lt;li&gt;[[4.01|04.01 La conteneurisation]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;li&gt;[[Exercice 4.1|04.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
