@@ -9000,7 +9000,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="Semainier [[04.02 Architecture en microservices]] 04.Exercices" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10041,12 +10041,42 @@ Par contre, on peut aussi avoir plusieurs processus plutôt qu'un seul; dans ce 
 * [[Install Docker Desktop on Windows|https://docs.docker.com/desktop/setup/install/windows-install/]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20241206115007976" list="" modified="20241206123940116" tags="[[04 Microservices avec conteneurisation]]" title="04.02 Architecture en microservices">
-<pre>&lt;div class=&quot;boite docu&quot;&gt;
+<div created="20241206115007976" list="" modified="20241213130018811" tags="[[04 Microservices avec conteneurisation]]" title="04.02 Architecture en microservices">
+<pre>
+Une architetcure en microservices se distingue d'une architecture monoloithique en ce que ce sont plusieurs ''processus (programmes) distincts'' qui se chargeront ensemble d'offrir ce qui paraîtra être une seule application à un usager final.
+
+[img width=&quot;800&quot; [img/monoVSmicroservices.webp]]
+
+* Idéalement, chaque microservice sera exécuté dans un conteneur séparé afin de les isoler les uns des autres et éviter les interférences (p.ex., si un microservice fait bloquer ou planter son conteneur, ça n'affectera pas les autres microservices).
+
+* Typiquement, les microservices communiqueront ensemble par Ethernet avec une API déterminée.
+
+L'architecture en microservices offre plusieurs avantages:
+
+* davantage de robustesse / résilience;
+* possibilité de distribuer les microservices sur différents hôtes physiques et donc d'augmenter les performances globales de l'application;
+* plus facile à maintenir puisque chaque microservice peut être modifié séparément sans devoir toucher aux autres microservices;
+* facile de déplacer les microservices au besoin;
+* plus facile de mettre en place une répartition de charge (//load balancing//).
+
+Par contre, une application en microservices:
+
+* demande généralement plus de temps à développer; notamment, il faut mettre en place une API et les communications associées;
+
+*  est généralement plus difficile à tester et déboguer;
+
+* est généralement plus complexe à déployer.
+
+&lt;div class=&quot;formule&quot;&gt;
+''Une application en microservices n'est donc généralement pas adaptée à la résolution de problèmes simples ou de faible envergure.''
+&lt;/div&gt;
+
+&lt;div class=&quot;boite docu&quot;&gt;
 
 * [[Creating a simple data-driven CRUD microservice|https://learn.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/data-driven-crud-microservice]]
 * [[.NET Microservices: Architecture for Containerized .NET Applications|https://learn.microsoft.com/en-us/dotnet/architecture/microservices/]]
 * [[Microservices Using ASP.NET Core|https://www.c-sharpcorner.com/article/microservice-using-asp-net-core/]]
+* [[Monolithic vs Microservices Architecture: Pros, Cons and Which to Choose|https://www.openlegacy.com/blog/monolithic-application]]
 
 
 &lt;/div&gt;</pre>
@@ -10513,7 +10543,7 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20241213121339197" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20241213123629847" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
 | 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[2.01|02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[Exercices 2.1 à 2.3|02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
@@ -10525,7 +10555,7 @@ img.normal {
 | 8 (18 nov.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;/ul&gt;|
 | 9 (25 nov.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;/ul&gt;|
 | 10 (2 déc.) |&lt;ul&gt;&lt;li&gt;[[4.01|04.01 La conteneurisation]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;li&gt;[[Exercice 4.1|04.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
-| 11 (9 déc.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;li&gt;[[Exercice 4.1|04.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 11 (9 déc.) |&lt;ul&gt;&lt;li&gt;[[4.02|04.02 Architecture en microservices]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;li&gt;[[Exercice 4.2|04.Exercices]]&lt;/li&gt;&lt;/ul&gt;|</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
