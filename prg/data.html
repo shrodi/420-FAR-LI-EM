@@ -9016,7 +9016,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier" title="$:/StoryList">
+<div list="Semainier [[05.02 Exemple avec Moq]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10116,7 +10116,7 @@ Une solution consiste à utiliser une bibliothèque de simulation d'objets (//mo
 * [[Démarrage rapide avec Moq|https://github.com/devlooped/moq/wiki/Quickstart]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20250116213242027" modified="20250117113901017" tags="[[05 Les simulacres (mocks)]]" title="05.02 Exemple avec Moq">
+<div created="20250116213242027" modified="20250117121827583" tags="[[05 Les simulacres (mocks)]]" title="05.02 Exemple avec Moq">
 <pre>Soit les deux classes suivantes:
 
 ```cs
@@ -10167,6 +10167,10 @@ public void TestAjouterEnfant()
 Afin de s'affranchir de la nécessité d'instancier la classe //Enfant// pour tester cette méthode de la classe //Parent//, on va créer avec Moq un simulacre d'objet //Enfant// basé sur l'interface //IEnfant// dont elle est dérivée. Ce simulacre pourra être utilisé en lieu et place d'un réel objet //Enfant//:
 
 ```cs
+using Moq;
+
+[...]
+
 [TestMethod]
 public void TestAjouterEnfant()
 {
@@ -10189,6 +10193,12 @@ public void TestAjouterEnfant()
     Assert.IsTrue(mere.Enfants[0].Parents[0].Nom == mere.Nom);
 }
 ```
+
+&lt;div class=&quot;boite note&quot;&gt;
+
+!! Notez bien qu'une bibliothèque de simulation, pour être utilisée, doit tout de même pouvoir s'appuyer sur une interface de classe existante.
+
+&lt;/div&gt;
 
 Le module ''Moq'' peut s'utiliser de plusieurs autres façons; consultez la documentation ci-dessous et cherchez des exemples sur le Web pour en connaître toutes les fonctionnalités.
 
