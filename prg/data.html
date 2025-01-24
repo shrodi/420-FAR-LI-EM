@@ -186,6 +186,8 @@ Error message and password prompt
 
 <li>$:/state/toc/Table des matières-05 Objets simulés (mocks)-1329480811</li>
 
+<li>$:/state/toc/Table des matières-06 Tests d'interface Web automatisés-1329480811</li>
+
 <li>$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811</li>
 
 <li>$:/state/toc/Table des matières-Glossaire-1329480811</li>
@@ -279,6 +281,12 @@ Error message and password prompt
 <li>05.01 Introduction</li>
 
 <li>05.02 Exemple avec Moq</li>
+
+<li>06 Tests fonctionnels automatisés</li>
+
+<li>06.01 Introduction</li>
+
+<li>06.02 Exemple avec Selenium</li>
 
 <li>99 TPs - Trucs et astuces</li>
 
@@ -8992,10 +9000,13 @@ exports.hljs = hljs;
 <div created="20241206115157805" modified="20241206115157805" title="$:/state/toc/Table des matières-04 Microservices-1329480811">
 <pre>open</pre>
 </div>
-<div created="20250116212953259" modified="20250116212953259" title="$:/state/toc/Table des matières-05 Les simulacres (mocks)-1329480811">
-<pre>open</pre>
+<div created="20250116212953259" modified="20250124033642041" title="$:/state/toc/Table des matières-05 Les simulacres (mocks)-1329480811">
+<pre>close</pre>
 </div>
 <div created="20250116181259429" modified="20250116181259429" title="$:/state/toc/Table des matières-05 Objets simulés (mocks)-1329480811">
+<pre>open</pre>
+</div>
+<div created="20250124033514907" modified="20250124033514907" title="$:/state/toc/Table des matières-06 Tests d'interface Web automatisés-1329480811">
 <pre>open</pre>
 </div>
 <div created="20241015235514395" modified="20241030191207632" title="$:/state/toc/Table des matières-99 TPs - Trucs et astuces-1329480811">
@@ -9016,7 +9027,7 @@ exports.hljs = hljs;
 <div created="20240912191413465" creator="e" modified="20240912191418808" modifier="emartel" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div list="Semainier [[05.02 Exemple avec Moq]]" title="$:/StoryList">
+<div list="[[06 Tests fonctionnels automatisés]] Semainier" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9073,7 +9084,7 @@ exports.hljs = hljs;
     }
 }</pre>
 </div>
-<div created="20210822182352824" modified="20250116213005855" title="$:/temp/search">
+<div created="20210822182352824" modified="20250124022443108" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.17">
@@ -10208,6 +10219,71 @@ Le module ''Moq'' peut s'utiliser de plusieurs autres façons; consultez la docu
 * [[Démarrage rapide avec Moq|https://github.com/devlooped/moq/wiki/Quickstart]]
 &lt;/div&gt;</pre>
 </div>
+<div created="20250124015937156" modified="20250124033730484" tags="[[Table des matières]]" title="06 Tests fonctionnels automatisés">
+<pre>&lt;&lt;ssections&gt;&gt;</pre>
+</div>
+<div created="20250124021612286" list="" modified="20250124033730485" tags="[[06 Tests fonctionnels automatisés]]" title="06.01 Introduction">
+<pre>Les tests unitaires sont utiles pour automatiser les tests //organiques// d'une application, c'est-à-dire en tester les diverses composantes internes. Mais qu'en est-il de l'interface utilisateur? Comment s'assurer, p. ex., que chaque bouton déclenche bien l'action désirée et retourne le résultat attendu? Bref, qu'en est-il des tests //fonctionnels//?
+
+Évidemment, on peut manuellement tester les composantes d'une interface, mais cela peut être très long, surtout s'il y a beaucoup d'écrans avec plusieurs composantes. Et, en principe, afin d'être exhaustif, on devrait tester toutes les possibilités à chaque fois qu'il y a des changements afin de repérer les éventuels [[bogues de régression|https://fr.wikipedia.org/wiki/R%C3%A9gression_logicielle]], ce qui risque de prendre ''beaucoup'' de temps...
+
+Heureusement, pour les applications Web, en raison de leur nature, il est possible d'automatiser l'opération des interfaces graphiques, car un agent logiciel peut facilement lire le code HTML/CSS/JS d'une application et lui envoyer des requêtes HTTP.
+
+Ainsi, il existe [[plusieurs cadriciels|https://www.google.com/search?q=+test+automation+frameworks+for+web+applications]] permettant de telles automatisation de tests fonctionnels d'applications Web, la plus mature et répandue étant sas doute Selenium, pour lequel il existe par ailleurs le paquetage NuGet //Selenium.WebDriver//.</pre>
+</div>
+<div created="20250124023440716" list="" modified="20250124033730485" tags="[[06 Tests fonctionnels automatisés]]" title="06.02 Exemple avec Selenium">
+<pre>```cs
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
+
+namespace TestProject
+{
+    [TestClass]
+    public sealed class Test1
+    {
+        [TestMethod]
+        public void TestCegepLimoilou()
+        {
+            // Arrange
+            ChromeDriver driver = new();
+            driver.Navigate().GoToUrl(&quot;https://www.cegeplimoilou.ca&quot;);
+
+            // Act
+            var title = driver.Title;
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+
+            var accessBtn = driver.FindElement(By.CssSelector(&quot;.btn--accessibility&quot;));
+            var accessModal = driver.FindElement(By.CssSelector(&quot;.modal-accessibility&quot;));
+
+            // Récupère l'état d'affichage des options de disponibilité avant clic
+            var accessDisplayNone = accessModal.GetCssValue(&quot;display&quot;);
+
+            // Clique sur le bouton d'accessibilité
+            accessBtn.Click();
+
+            // Récupère l'état d'affichage des options de disponibilité après clic
+            var accessDisplayBlock = accessModal.GetCssValue(&quot;display&quot;);
+
+            // Assert
+            Assert.AreEqual(&quot;Cégep Limoilou&quot;, title);
+            Assert.AreEqual(&quot;none&quot;, accessDisplayNone);
+            Assert.AreEqual(&quot;block&quot;, accessDisplayBlock);
+
+            driver.Quit();
+        }
+    }
+}
+
+```
+
+&lt;div class=&quot;boite docu&quot;&gt;
+
+* [[Site de Selenium|https://www.selenium.dev/]]
+* [[Démarrer avec Selenium WebDriver|https://www.selenium.dev/documentation/webdriver/getting_started/]]
+
+&lt;/div&gt;</pre>
+</div>
 <div created="20241007125408807" modified="20241015165752443" tags="[[Table des matières]]" title="99 TPs - Trucs et astuces">
 <pre>&lt;&lt;enfants&gt;&gt;</pre>
 </div>
@@ -10664,7 +10740,7 @@ img.normal {
 * [[Présentation de NuGet|https://learn.microsoft.com/fr-ca/nuget/what-is-nuget]]
 &lt;/div&gt;</pre>
 </div>
-<div created="20231022185402519" modified="20250117114501678" tags="[[Table des matières]]" title="Semainier">
+<div created="20231022185402519" modified="20250124022440581" tags="[[Table des matières]]" title="Semainier">
 <pre>| Semaine | Sections à l'étude | À faire |h
 | 1 (30 sept.) |&lt;ul&gt;&lt;li&gt;[[01 Journalisation applicative]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;[[00 Préparation]]&lt;/li&gt;&lt;li&gt;[[01.Exercices]]&lt;/li&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;/ul&gt;|
 | 2 (7 oct.) |&lt;ul&gt;&lt;li&gt;[[Trucs et astuces TP1|99.01 Trucs TP1]]&lt;/li&gt;&lt;li&gt;[[2.01|02 Performance]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;TP1&lt;/li&gt;&lt;li&gt;[[Exercices 2.1 à 2.3|02.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
@@ -10680,7 +10756,12 @@ img.normal {
 | 12 (16 déc.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP3 (v2)&lt;/li&gt;&lt;li&gt;[[Exercice 4.2|04.Exercices]]&lt;/li&gt;&lt;/ul&gt;|
 | (23 déc. - 3 jan.) | //Congé des fêtes// | |
 | 13 (6 jan.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP4&lt;/li&gt;&lt;/ul&gt;|
-| 14 (13 jan.) |&lt;ul&gt;&lt;li&gt;[[5.01|05.01 Introduction]] et [[5.02|05.02 Exemple avec Moq]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;Lire les notes de cours et la documentation des sections à l'étude&lt;/li&gt;&lt;li&gt;TP4&lt;/li&gt;&lt;/ul&gt;|</pre>
+| 14 (13 jan.) |&lt;ul&gt;&lt;li&gt;[[5.01|05.01 Introduction]] et [[5.02|05.02 Exemple avec Moq]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;Lire les notes de cours et la documentation des sections à l'étude&lt;/li&gt;&lt;li&gt;TP4&lt;/li&gt;&lt;/ul&gt;|
+| 15 (20 jan.) |&lt;ul&gt;&lt;li&gt;[[6.01|06.01 Introduction]] et [[6.02|06.02 Exemple avec Selenium]]&lt;/li&gt;&lt;/ul&gt;|&lt;ul&gt;&lt;li&gt;Lire les notes de cours et la documentation des sections à l'étude&lt;/li&gt;&lt;li&gt;TP4 / TP5&lt;/li&gt;&lt;/ul&gt;|
+| 16 (27 jan.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP4 / TP5&lt;/li&gt;&lt;/ul&gt;|
+| 17 (3 fév.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP5&lt;/li&gt;&lt;/ul&gt;|
+| 18 (10 fév.) | //Pas de nouvelle matière// |&lt;ul&gt;&lt;li&gt;TP5&lt;/li&gt;&lt;/ul&gt;|
+</pre>
 </div>
 <div created="20240930145653696" modified="20240930145838495" tags="Glossaire" title="système d'information (SI)">
 <pre>Terme générique pouvant s'appliquer autant à un programme informatique qu'à un système d'exploitation, un script, un réseau, etc. Bref, toute entité de traitement informatique est un système d'information.</pre>
